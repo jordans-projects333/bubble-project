@@ -438,6 +438,13 @@ body::-webkit-scrollbar-thumb{
     background-color: black;
     margin-bottom: 1rem;
 }
+.products-title{
+    padding-left: 1rem;
+    text-decoration: wavy;
+    font-size: 1.2rem;
+    /* text-align: center; */
+    margin-bottom: .5rem;
+}
 .filter{
 
     width: 90%;
