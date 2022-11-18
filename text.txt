@@ -1,0 +1,81 @@
+authenticate server side is good practice as it cant be seen or manipulated
+data between node.js:
+-module.exports = { data }
+-const { data } = require("./data.js")
+express/http requests:
+-server.get() = get data
+-server.post() = send/add data
+-server.put() = edit data
+-server.delete() = delete data
+sever.METHOD(PATH, HANDLER)
+handle is a function
+npm i cors(middleware)
+
+server.get("/", (req, res) => {
+    
+})
+
+or 
+
+server.get("/", function(req, res) {
+    
+})
+
+input attr:
+-size = default length of characters
+-maxlength = maximum size
+-min/max = min and max values for dates,numbers,ect
+-name is for backend
+
+Features:
+-Webscrape data from etsy/ prices, number of sales.
+-shopping cart
+-Share button
+-purchases
+-Image optimization/size differences
+-Form validation
+-snapping?
+-routing?
+
+Main:
+-header
+-home/about/socials/product preview
+-products
+-contact seller
+-reviews(carosell)
+-cart(if any items)
+-footer
+
+Product:
+-photos
+-description/details
+-review of product
+-add to cart
+-return to home button
+-replace about, underneath = rest of main
+
+Cart:
+-return to home
+-list items
+-swipe to remove
+-add/decrease quantity
+-price
+-special/request or note
+-purchase button
+-any questions? contact seller
+-dont miss out/suggested(recently viewed at top)
+
+Todays goals:
+quantity in cart
+add to cart animation
+cart item number in navbar
+filter
+maybe change route names to product names
+MAKE POP UPS TEMPLATES
+
+
+==========
+manipulated totals before buying??? 
+send data, do calculations. if adds up correctly then confirm
+min-max margin,height,weight
+==========
