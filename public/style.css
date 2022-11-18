@@ -484,13 +484,13 @@ body::-webkit-scrollbar-thumb{
     margin-top: 5vh;
 }
 .grid-container{
-    padding: .5rem;
+    padding: .8rem;
     padding-top: 0%;
     width: 100%;
     background-color: white;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: .5rem;
+    gap: .8rem;
     min-height: 60vh;
 }
 .grid-item{
@@ -503,7 +503,10 @@ body::-webkit-scrollbar-thumb{
 }
 @keyframes refresh{
     0% {
-        scale: 0;
+        scale: 1;
+    }
+    50%{
+        scale: 1.05;
     }
     100% {
         scale: 1;
