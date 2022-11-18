@@ -452,10 +452,8 @@ body::-webkit-scrollbar-thumb{
 }
 .filter{
 
-    width: 90%;
+    width: 100%;
     /* border: red 1px solid; */
-    margin-left: auto;
-    margin-right: auto;
 
 }
 .filter-wrapper{
@@ -464,6 +462,8 @@ body::-webkit-scrollbar-thumb{
     z-index: 10;
     background-color: white;
     width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .filter-item{
     display: flex;
@@ -487,6 +487,7 @@ body::-webkit-scrollbar-thumb{
     position: fixed;
     top: 0;
     margin-top: 5vh;
+    width: 100%;
 }
 .grid-container{
     padding: .8rem;
@@ -568,7 +569,7 @@ body::-webkit-scrollbar-thumb{
 }
 /* === Footer === */
 .main-footer{
-    background-color: #24262b;
+    background-color: #001448;
     width: 100%;
     display: flex;
     justify-content: center;
