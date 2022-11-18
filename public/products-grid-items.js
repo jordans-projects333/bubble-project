@@ -34,6 +34,9 @@ function filterClick(e){
         // console.log(item)
         item.classList.remove("active-filter")
     })
+    items.forEach((i)=>{
+        i.element.classList.remove("refreshAnimation")
+    })
     e.classList.add("active-filter")
     switch(e.innerText) {
         case "All":

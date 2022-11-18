@@ -82,11 +82,11 @@ min-max margin,height,weight
 
 Today: 
 11am - 1pm
-- filter
+- filter ***
 - cart in navbar
 - see reviews
 - fix filter on scroll
-- filter animation
+- filter animation ***
 
 -Hour break(1pm)
  - mock up another website
