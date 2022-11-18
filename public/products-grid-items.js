@@ -29,7 +29,7 @@ fetch("/length")
     .catch(err => console.log(err))
 
 function filterClick(e){
-    // console.log("clicked")
+    let total = (document.querySelector(".grid-container").childElementCount) -1
     document.querySelectorAll(".filter-item").forEach((item) => {
         // console.log(item)
         item.classList.remove("active-filter")
@@ -37,21 +37,24 @@ function filterClick(e){
     items.forEach((i)=>{
         i.element.classList.remove("refreshAnimation")
     })
+    document.querySelector(".products-title").classList.remove("refreshAnimation")
     e.classList.add("active-filter")
     switch(e.innerText) {
         case "All":
-            items.forEach((i)=>{
+            items.forEach((i, index)=>{
                 i.element.classList.remove("filter-hide")
                 i.element.classList.add("refreshAnimation")
+                document.querySelector(".products-title").classList.add("refreshAnimation")
             })
             break;
         case "Bombs":
-            items.forEach((i)=>{
+            items.forEach((i, index)=>{
                 if(i.category != "bomb"){
                     i.element.classList.add("filter-hide")
                 }else{
                     i.element.classList.remove("filter-hide")
                     i.element.classList.add("refreshAnimation")
+                    document.querySelector(".products-title").classList.add("refreshAnimation")
                 }
             })
             break;
@@ -62,6 +65,7 @@ function filterClick(e){
                 }else{
                     i.element.classList.remove("filter-hide")
                     i.element.classList.add("refreshAnimation")
+                    document.querySelector(".products-title").classList.add("refreshAnimation")
                 }
             })
             break
@@ -72,6 +76,7 @@ function filterClick(e){
                 }else{
                     i.element.classList.remove("filter-hide")
                     i.element.classList.add("refreshAnimation")
+                    document.querySelector(".products-title").classList.add("refreshAnimation")
                 }
             })
             break
@@ -82,8 +87,10 @@ function filterClick(e){
                 }else{
                     i.element.classList.remove("filter-hide")
                     i.element.classList.add("refreshAnimation")
+                    document.querySelector(".products-title").classList.add("refreshAnimation")
                 }
             })
             break
         }
+        document.querySelector(".products-title").innerText = `Products(${total-document.querySelectorAll('.filter-hide').length})`
 }

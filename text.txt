@@ -88,6 +88,8 @@ Today:
 - fix filter on scroll
 - filter animation ***
 
+items total automatic not manually typed
+
 -Hour break(1pm)
  - mock up another website
 

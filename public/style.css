@@ -513,6 +513,7 @@ body::-webkit-scrollbar-thumb{
     }
 }
 .refreshAnimation{
+    transform-origin: center;
     animation: refresh .5s forwards;
 }
 .grid-item img{
