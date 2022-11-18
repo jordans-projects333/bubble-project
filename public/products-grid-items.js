@@ -39,6 +39,7 @@ function filterClick(e){
         case "All":
             items.forEach((i)=>{
                 i.element.classList.remove("filter-hide")
+                i.element.classList.add("refreshAnimation")
             })
             break;
         case "Bombs":
@@ -47,6 +48,7 @@ function filterClick(e){
                     i.element.classList.add("filter-hide")
                 }else{
                     i.element.classList.remove("filter-hide")
+                    i.element.classList.add("refreshAnimation")
                 }
             })
             break;
@@ -56,6 +58,7 @@ function filterClick(e){
                     i.element.classList.add("filter-hide")
                 }else{
                     i.element.classList.remove("filter-hide")
+                    i.element.classList.add("refreshAnimation")
                 }
             })
             break
@@ -65,6 +68,7 @@ function filterClick(e){
                     i.element.classList.add("filter-hide")
                 }else{
                     i.element.classList.remove("filter-hide")
+                    i.element.classList.add("refreshAnimation")
                 }
             })
             break
@@ -74,6 +78,7 @@ function filterClick(e){
                     i.element.classList.add("filter-hide")
                 }else{
                     i.element.classList.remove("filter-hide")
+                    i.element.classList.add("refreshAnimation")
                 }
             })
             break

@@ -501,6 +501,17 @@ body::-webkit-scrollbar-thumb{
     position: relative;
 
 }
+@keyframes refresh{
+    0% {
+        scale: 0;
+    }
+    100% {
+        scale: 1;
+    }
+}
+.refreshAnimation{
+    animation: refresh .5s forwards;
+}
 .grid-item img{
     width: 100%;
     height: auto;
