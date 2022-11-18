@@ -468,6 +468,9 @@ body::-webkit-scrollbar-thumb{
     color: rgb(5, 120, 174);
     text-decoration: underline;
 }
+.filter-hide{
+    display: none;
+}
 .filter-sticky{
     position: fixed;
     top: 0;

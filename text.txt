@@ -85,9 +85,13 @@ Today:
 - filter
 - cart in navbar
 - see reviews
+- fix filter on scroll
+- filter animation
 
 -Hour break(1pm)
  - mock up another website
 
 -Second hour
  - c/c++?
+
+ 0987

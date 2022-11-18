@@ -44,7 +44,8 @@ Object.keys(data).forEach((i, index) => {
         res.render('product', {
             name: data[i].name,
             image: data[i].image,
-            price: data[i].price
+            price: data[i].price,
+            category: data[i].category
         })
     });
 })
