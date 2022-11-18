@@ -79,3 +79,15 @@ manipulated totals before buying???
 send data, do calculations. if adds up correctly then confirm
 min-max margin,height,weight
 ==========
+
+Today: 
+11am - 1pm
+- filter
+- cart in navbar
+- see reviews
+
+-Hour break(1pm)
+ - mock up another website
+
+-Second hour
+ - c/c++?

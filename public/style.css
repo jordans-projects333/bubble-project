@@ -461,11 +461,12 @@ body::-webkit-scrollbar-thumb{
     /* padding-bottom: .25rem; */
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: .25rem;
+    margin-bottom: .5rem;
     /* border: #0D0D0D solid 1px; */
 }
 .active-filter{
-    border-bottom: 2px solid rgb(5, 120, 174);
+    color: rgb(5, 120, 174);
+    text-decoration: underline;
 }
 .filter-sticky{
     position: fixed;
