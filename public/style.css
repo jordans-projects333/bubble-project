@@ -41,6 +41,11 @@ body::-webkit-scrollbar-thumb{
 .navbar{
     flex: 4;
 }
+.cart-icon{
+    color: black;
+    padding-top: .65rem;
+    font-size: 1.3rem;
+}
 .navbar-list-container{
     list-style-type: none;
     display: flex;
