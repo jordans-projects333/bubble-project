@@ -430,57 +430,6 @@ body::-webkit-scrollbar-thumb{
     justify-content: space-around;
     align-items: center;
 }
-.featured{
-    width: 100%;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    /* background-color: rgb(255, 234, 234); */
-    /* background: url(./img/back1.jpg); */
-    /* background-size: 100% 100%; */
-    /* height: 15vh; */
-}
-.featured-container{
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 28%;
-    gap: .5rem;
-    height: 100%;
-    margin-left: .5rem;
-    margin-right: .5rem;
-    overflow-x: scroll;
-    align-items: center;
-    padding-bottom: .25rem;
-    
-}
-.featured-container::-webkit-scrollbar {
-    height: 0.15em;
-   }
-.featured-container::-webkit-scrollbar-track{
-    background-color: white;
-}
-.featured-container::-webkit-scrollbar-thumb{
-    background-color: rgb(82, 163, 255);
-}
-.featured-item{
-    /* width: 40vw; */
-    aspect-ratio: 1/1;
-    /* border-radius: 10px; */
-    /* border-radius: 5px;
-    background: rgba( 255, 255, 255, 0.1 );
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur( 3px );
-    -webkit-backdrop-filter: blur( 3px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-    float: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.featured-item img{
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-}
 .divider{
     width: 90%;
     margin-left: auto;
@@ -490,27 +439,30 @@ body::-webkit-scrollbar-thumb{
     margin-bottom: 1rem;
 }
 .filter{
-    width: 100%;
+
+    width: 90%;
+    /* border: red 1px solid; */
+    margin-left: auto;
+    margin-right: auto;
+
 }
 .filter-wrapper{
     display: flex;
-    /* justify-content: space-around; */
+    justify-content: space-between;
     z-index: 10;
     background-color: white;
     width: 100%;
 }
 .filter-item{
     display: flex;
+    /* border: 1px black solid; */
     align-items: center;
-    margin-left: 1.5rem;
+    /* margin-left: 1.5rem; */
     /* padding-bottom: .25rem; */
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: .25rem;
     /* border: #0D0D0D solid 1px; */
-}
-.filter-item:first-child{
-    margin-left: .5rem;
 }
 .active-filter{
     border-bottom: 2px solid rgb(5, 120, 174);
