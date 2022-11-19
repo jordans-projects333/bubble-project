@@ -474,10 +474,11 @@ body::-webkit-scrollbar-thumb{
     width: 100%;
     margin-bottom: .5rem;
     /* border: red 1px solid; */
-
+    position: sticky;
+    top: 5vh;
+    z-index: 20;
 }
 .filter-wrapper{
-    position: relative;
     display: flex;
     justify-content: space-between;
     z-index: 10;

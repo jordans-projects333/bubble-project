@@ -12,22 +12,7 @@
 //         filter.classList.remove("filter-sticky")
 //     }
 // })
-let filter = document.querySelector(".filter-wrapper")
-let filterPosition = document.querySelector(".filter")
-document.querySelector(".filter").style.height = filter.offsetHeight+"px"
-window.addEventListener('scroll',()=>{ 
-    let header = document.querySelector("header")
-    if(filterPosition.getBoundingClientRect().top <= header.getBoundingClientRect().bottom){
-        filter.style.position = "fixed"
-        filter.style.marginTop = "5vh"
-        filter.style.top = "0"
 
-    }else{
-        // filter.classList.remove("filter-sticky")
-        filter.style.position = ""
-        filter.style.marginTop = "0px"
-    }
-})
 // === Filter slider 
 function sliderPosition(position){
     let firstPosition = document.querySelector(".filter-wrapper").children[position].getBoundingClientRect().left
