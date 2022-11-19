@@ -3,20 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-/* mobile address bar */
-html {
-    overflow: hidden;
-    width: 100%;
-  }
-  
-body {
-height: 100%;
-position: fixed;
-/* prevent overscroll bounce*/
-overflow-y: scroll;
--webkit-overflow-scrolling: touch;
-/* iOS velocity scrolling */
-}
 /* === Scrollbar === */
 body::-webkit-scrollbar{
     width: 0.25rem;
