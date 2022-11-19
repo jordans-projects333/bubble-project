@@ -33,21 +33,6 @@ async function addedToCart(e){
 
 }
 
-// Filter sticks to navbar on scroll
-let filter = document.querySelector(".filter-wrapper")
-let filterPosition = document.querySelector(".filter")
-document.querySelector(".filter").style.height = filter.offsetHeight+"px"
-window.onscroll = function (e) {  
-    let header = document.querySelector("header")
-    if(filterPosition.getBoundingClientRect().top <= header.getBoundingClientRect().bottom){
-        filter.classList.add("filter-sticky")
-        
-
-    }else{
-        filter.classList.remove("filter-sticky")
-    }
-} 
-
 // document.querySelector('.grid-item').addEventListener("click", ()=>{
 //     document.querySelector('.pop-up').style.display = "flex"
 // })

@@ -22,6 +22,7 @@ body::-webkit-scrollbar-thumb{
     top: 0;
     background-color: white;
     height: 5vh;
+    /* border-bottom: #e70087 1px solid; */
     z-index: 2;
 }
 /* Title */

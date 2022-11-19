@@ -1,3 +1,17 @@
+// Filter sticks to navbar on scroll
+let filter = document.querySelector(".filter-wrapper")
+let filterPosition = document.querySelector(".filter")
+document.querySelector(".filter").style.height = filter.offsetHeight+"px"
+window.addEventListener('scroll',()=>{ 
+    let header = document.querySelector("header")
+    if(filterPosition.getBoundingClientRect().top <= header.getBoundingClientRect().bottom){
+        filter.classList.add("filter-sticky")
+        
+
+    }else{
+        filter.classList.remove("filter-sticky")
+    }
+})
 // === Filter slider 
 function sliderPosition(position){
     let firstPosition = document.querySelector(".filter-wrapper").children[position].getBoundingClientRect().left
