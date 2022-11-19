@@ -98,5 +98,5 @@ function filterClick(e){
             })
             break
         }
-        document.querySelector(".products-title").innerText = `Products(${total-document.querySelectorAll('.filter-hide').length})`
+        document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${total-document.querySelectorAll('.filter-hide').length})</span>`
 }
