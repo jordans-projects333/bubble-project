@@ -453,6 +453,7 @@ body::-webkit-scrollbar-thumb{
 .filter{
 
     width: 100%;
+    /* margin-bottom: .5rem; */
     /* border: red 1px solid; */
 
 }
@@ -463,8 +464,9 @@ body::-webkit-scrollbar-thumb{
     z-index: 10;
     background-color: white;
     width: 100%;
-    /* padding-left: 1rem;
-    padding-right: 1rem; */
+    /* border: black 1px solid;; */
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .filter-item{
     display: flex;
@@ -474,28 +476,28 @@ body::-webkit-scrollbar-thumb{
     /* padding-bottom: .25rem; */
     /* font-weight: 300; */
     font-size: 1.2rem;
-    margin-bottom: .5rem;
     /* border: red solid 1px; */
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
 }
 /* not in use */
 .active-filter{
-    border-bottom: 3px solid rgb(5, 120, 174);
+    /* border-bottom: 3px solid rgb(5, 120, 174); */
     /* background-color: rgb(5, 120, 174); */
-    /* color: white; */
-    text-decoration: solid;
+    color: white;
+    transition: .2s;
+    /* text-decoration: solid; */
 }
 .filter-slider{
     position: absolute;
-    bottom: 10%;
+    bottom: 0%;
     left:0;
     width: 60px;
-    height: 30px;
+    height: 100%;
     /* border: red solid 1px; */
     border-bottom: 3px solid rgb(5, 120, 174);
-    /* background-color:rgb(5, 120, 174); 
-    border-radius: 10px; */
+    background-color:rgb(5, 120, 174); 
+    /* border-radius: 10px; */
     transition: .2s;
     pointer-events: none;
     z-index: -1;
