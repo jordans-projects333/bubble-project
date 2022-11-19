@@ -4,18 +4,7 @@
     box-sizing: border-box;
 }
 /* mobile address bar */
-html {
-    overflow: hidden;
-  }
-  
-body {
-height: 100%;
-position: fixed;
-/* prevent overscroll bounce*/
-overflow-y: scroll;
--webkit-overflow-scrolling: touch;
-/* iOS velocity scrolling */
-}
+main { position: fixed; top: 0.5px; right: 0; bottom: 0.5px; left: 0;  }
 /* === Scrollbar === */
 body::-webkit-scrollbar{
     width: 0.25rem;
