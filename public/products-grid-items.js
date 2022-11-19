@@ -29,25 +29,40 @@ fetch("/length")
     .catch(err => console.log(err))
 
 function filterClick(e){
+    let slider = document.querySelector(".filter-slider")
     let total = (document.querySelector(".grid-container").childElementCount) -1
     document.querySelectorAll(".filter-item").forEach((item) => {
         // console.log(item)
-        item.classList.remove("active-filter")
+        // item.classList.remove("active-filter")
     })
     items.forEach((i)=>{
         i.element.classList.remove("refreshAnimation")
     })
     document.querySelector(".products-title").classList.remove("refreshAnimation")
-    e.classList.add("active-filter")
+    // e.classList.add("active-filter")
     switch(e.innerText) {
         case "All":
+            slider.style.left = "0"
             items.forEach((i, index)=>{
                 i.element.classList.remove("filter-hide")
                 i.element.classList.add("refreshAnimation")
                 document.querySelector(".products-title").classList.add("refreshAnimation")
             })
             break;
+        case "Sets":
+            slider.style.left = "15%"
+            items.forEach((i)=>{
+                if(i.category != "set"){
+                    i.element.classList.add("filter-hide")
+                }else{
+                    i.element.classList.remove("filter-hide")
+                    i.element.classList.add("refreshAnimation")
+                    document.querySelector(".products-title").classList.add("refreshAnimation")
+                }
+            })
+            break
         case "Bombs":
+            slider.style.left = "34%"
             items.forEach((i, index)=>{
                 if(i.category != "bomb"){
                     i.element.classList.add("filter-hide")
@@ -58,18 +73,8 @@ function filterClick(e){
                 }
             })
             break;
-        case "Bars/Salts":
-            items.forEach((i)=>{
-                if(i.category != "bar"){
-                    i.element.classList.add("filter-hide")
-                }else{
-                    i.element.classList.remove("filter-hide")
-                    i.element.classList.add("refreshAnimation")
-                    document.querySelector(".products-title").classList.add("refreshAnimation")
-                }
-            })
-            break
         case "Rocks":
+            slider.style.left = "56%"
             items.forEach((i)=>{
                 if(i.category != "rocks"){
                     i.element.classList.add("filter-hide")
@@ -80,9 +85,10 @@ function filterClick(e){
                 }
             })
             break
-        case "Sets":
+        case "Bars/Salts":
+            slider.style.left = "80%"
             items.forEach((i)=>{
-                if(i.category != "set"){
+                if(i.category != "bar"){
                     i.element.classList.add("filter-hide")
                 }else{
                     i.element.classList.remove("filter-hide")
