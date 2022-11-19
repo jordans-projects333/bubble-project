@@ -1,9 +1,4 @@
-// === Filter slider 
-let firstPosition = document.querySelector(".filter-wrapper").children[0].getBoundingClientRect().left
-let secondPosition = document.querySelector(".filter-wrapper").children[0].getBoundingClientRect().right
-let sliderwidth = (secondPosition - firstPosition)
-document.querySelector(".filter-slider").style.left = firstPosition - 10 +"px"
-document.querySelector(".filter-slider").style.width = sliderwidth + 15 + "px"
+
 
 
 // === Mobile navigation menu dropdown

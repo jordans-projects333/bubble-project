@@ -487,6 +487,7 @@ body::-webkit-scrollbar-thumb{
     padding-right: 1rem;
     border-left: 3px solid rgb(49, 158, 209);
     margin-bottom: .5rem;
+    border-bottom: white 3px solid;
 
 }
 .filter-item{
