@@ -1,11 +1,3 @@
-window.addEventListener("load",function() {
-    setTimeout(function(){
-        // This hides the address bar:
-        window.scrollTo(0, 1);
-    }, 0);
-});
-
-
 // === Mobile navigation menu dropdown
 document.querySelector('.mobile-nav-bar-container').addEventListener('click', () => {
     document.querySelector('.mobile-nav-bar-container').classList.toggle('active');
