@@ -1,3 +1,13 @@
+// === Filter slider 
+function sliderPosition(position){
+    let firstPosition = document.querySelector(".filter-wrapper").children[position].getBoundingClientRect().left
+    let secondPosition = document.querySelector(".filter-wrapper").children[position].getBoundingClientRect().right
+    let sliderwidth = (secondPosition - firstPosition)
+    document.querySelector(".filter-slider").style.left = firstPosition - 10 +"px"
+    document.querySelector(".filter-slider").style.width = sliderwidth + 15 + "px"
+}
+
+sliderPosition(0)
 items = []
 // Creating the product grid from data
 function createGridItems(number){
@@ -29,6 +39,7 @@ fetch("/length")
     .catch(err => console.log(err))
 
 function filterClick(e){
+    document.querySelector(".product-number").classList.remove("temp-spin")
     let slider = document.querySelector(".filter-slider")
     let total = (document.querySelector(".grid-container").childElementCount) -1
     document.querySelectorAll(".filter-item").forEach((item) => {
@@ -38,55 +49,55 @@ function filterClick(e){
     items.forEach((i)=>{
         i.element.classList.remove("refreshAnimation")
     })
-    document.querySelector(".products-title").classList.remove("refreshAnimation")
+    // document.querySelector(".product-number").classList.remove("refreshAnimation")
     e.classList.add("active-filter")
     switch(e.innerText) {
         case "All":
-            slider.style.left = "0"
+            sliderPosition(0)
             items.forEach((i, index)=>{
                 i.element.classList.remove("filter-hide")
                 i.element.classList.add("refreshAnimation")
-                document.querySelector(".products-title").classList.add("refreshAnimation")
+                // document.querySelector(".products-title").classList.add("refreshAnimation")
             })
             break;
         case "Sets":
-            slider.style.left = "15%"
+            sliderPosition(1)
             items.forEach((i)=>{
                 if(i.category != "set"){
                     i.element.classList.add("filter-hide")
                 }else{
                     i.element.classList.remove("filter-hide")
                     i.element.classList.add("refreshAnimation")
-                    document.querySelector(".products-title").classList.add("refreshAnimation")
+                    // document.querySelector(".products-title").classList.add("refreshAnimation")
                 }
             })
             break
         case "Bombs":
-            slider.style.left = "34%"
+            sliderPosition(2)
             items.forEach((i, index)=>{
                 if(i.category != "bomb"){
                     i.element.classList.add("filter-hide")
                 }else{
                     i.element.classList.remove("filter-hide")
                     i.element.classList.add("refreshAnimation")
-                    document.querySelector(".products-title").classList.add("refreshAnimation")
+                    // document.querySelector(".products-title").classList.add("refreshAnimation")
                 }
             })
             break;
         case "Rocks":
-            slider.style.left = "56%"
+            sliderPosition(3)
             items.forEach((i)=>{
                 if(i.category != "rocks"){
                     i.element.classList.add("filter-hide")
                 }else{
                     i.element.classList.remove("filter-hide")
                     i.element.classList.add("refreshAnimation")
-                    document.querySelector(".products-title").classList.add("refreshAnimation")
+                    // document.querySelector(".products-title").classList.add("refreshAnimation")
                 }
             })
             break
         case "Bars/Salts":
-            slider.style.left = "80%"
+            sliderPosition(4)
             items.forEach((i)=>{
                 if(i.category != "bar"){
                     i.element.classList.add("filter-hide")
@@ -99,4 +110,5 @@ function filterClick(e){
             break
         }
         document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${total-document.querySelectorAll('.filter-hide').length})</span>`
+        document.querySelector(".product-number").classList.add("temp-spin")
 }
