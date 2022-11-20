@@ -49,6 +49,7 @@ function createGridItems(number){
 fetch("/length")
     .then(response => response.json())
     .then(data => {
+        createGridItems(data)
         // for(let i = 0; i < data; i++){
         //     const template = document.querySelector("#grid-item-template")
         //     const the_content = template.content.cloneNode(true)
@@ -58,7 +59,8 @@ fetch("/length")
     })
     .then(data => {
         console.log("under construction")
-        createGridItems(data)
+        // createGridItems(data)
+        document.querySelector(".loader").style.display = "none"
     })
     .catch(err => console.log(err))
 
