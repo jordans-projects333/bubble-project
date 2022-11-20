@@ -137,17 +137,17 @@ body::-webkit-scrollbar-thumb{
     left: 0 !important;
     transition: .5s !important;
 }
-.slideOneOut{
+/* .slideOneOut{
     left: 100% !important;
     transition: 1s !important;
 }
 .slideTwoIn{
     left: 0 !important;
     transition: 1s !important;
-}
+} */
 .slideTwoOut{
     left: -100% !important;
-    transition: .5s !important;
+    transition: 1s !important;
 }
 .logo-section{
     position: relative;
