@@ -33,7 +33,7 @@ function createGridItems(number){
             .then(response => response.json())
             .then(data => {
                 // div.innerHTML = data.name
-                the_content.querySelector("a").href = `/product${i}`
+                // the_content.querySelector("a").href = `/product${i}`
                 the_content.querySelector("img").src = data.image
                 // content.querySelector(".addToCart").addEventListener("click", () => addToTheCart(data.image,data.name,data.price))
                 the_content.querySelector("h5").innerHTML = data.price + "<br>"+data.name
@@ -126,4 +126,13 @@ function filterClick(e){
         }
         document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${total-document.querySelectorAll('.filter-hide').length})</span>`
         document.querySelector(".product-number").classList.add("temp-spin")
+}
+
+function getProduct(){
+    document.querySelector(".productInfoSection").style.left = "0"
+    document.querySelector(".slideContent").style.left = "-100%"
+}
+function backHome(){
+    document.querySelector(".productInfoSection").style.left = "100%"
+    document.querySelector(".slideContent").style.left = "0"
 }
