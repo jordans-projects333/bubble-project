@@ -137,14 +137,14 @@ body::-webkit-scrollbar-thumb{
     left: 0 !important;
     transition: .5s !important;
 }
-/* .slideOneOut{
+.slideOneOut{
     left: 100% !important;
-    transition: 1s !important;
+    transition: .2s !important;
 }
 .slideTwoIn{
     left: 0 !important;
-    transition: 1s !important;
-} */
+    transition: .2s !important;
+}
 .slideTwoOut{
     left: -100% !important;
     transition: 1s !important;
