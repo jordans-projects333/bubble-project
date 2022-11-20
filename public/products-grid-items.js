@@ -76,8 +76,11 @@ fetch("/length")
     .then(async data => {
         console.log("data collected")
         await createGridItems(data)
-        document.querySelector(".loader").style.display = "none"
-        document.querySelector(".product-number").innerText = `(${data})`
+        let yee = document.querySelectorAll(".grid-item")
+        yee[yee.length-1].querySelector("img").addEventListener("onload", () => {
+            document.querySelector(".loader").style.display = "none"
+            document.querySelector(".product-number").innerText = `(${data})`
+        })
     })
     .catch(err => console.log(err))
 
