@@ -139,11 +139,11 @@ body::-webkit-scrollbar-thumb{
 }
 .slideOneOut{
     left: 100% !important;
-    transition: .2s !important;
+    transition: .5s !important;
 }
 .slideTwoIn{
     left: 0 !important;
-    transition: .2s !important;
+    transition: .5s !important;
 }
 .slideTwoOut{
     left: -100% !important;
