@@ -555,6 +555,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .grid-container{
+    position: relative;
     padding: .8rem;
     padding-top: 0%;
     width: 100%;
@@ -588,9 +589,49 @@ body::-webkit-scrollbar-thumb{
     transform-origin: center;
     animation: refresh .2s forwards;
 }
-/* .loader{
-    
-} */
+.loader{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    /* background-color: lightgreen; */
+}
+.loader-item{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transform-origin: top left;
+    animation: loading 3s linear infinite;
+    top: 30%;
+    left: 50%;
+    /* border: red 1px solid; */
+}
+.circle{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgb(49, 158, 209);
+    transform: scale(0);
+    margin: -25px;
+    animation: loadGrow 1.5s linear infinite;
+}
+.circle:nth-child(2){
+    background-color: rgb(85, 201, 255);
+    animation-delay: 0.75s;
+}
+@keyframes loading {
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes loadGrow {
+    50%{
+        transform: scale(1);
+    }
+}
 .grid-item img{
     width: 100%;
     height: auto;
