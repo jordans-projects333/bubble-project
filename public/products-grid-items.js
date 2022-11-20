@@ -128,11 +128,20 @@ function filterClick(e){
         document.querySelector(".product-number").classList.add("temp-spin")
 }
 
-function getProduct(){
+function getProduct(e){
+    // Transition
     document.querySelector(".productInfoSection").classList.remove("slideOneOut")
     document.querySelector(".slideContent").classList.remove("slideTwoIn")
     document.querySelector(".productInfoSection").classList.add("slideOneIn")
     document.querySelector(".slideContent").classList.add("slideTwoOut")
+
+    // Get data
+    imageData = e.querySelector("img").src
+    titleData = e.querySelector("h5").innerText
+    document.querySelector(".product-image").src = imageData
+    document.querySelector(".product-title").innerText = titleData
+
+    // Get Reviews
 }
 function backHome(){
     document.querySelector(".productInfoSection").classList.remove("slideOneIn")

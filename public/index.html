@@ -107,7 +107,7 @@
                 <h4 class="products-title">Products<span class="product-number">(22)</span></h4>
                 <div class="grid-container">
                     <template id="grid-item-template">
-                        <div class="grid-item" onclick="getProduct()">
+                        <div class="grid-item" onclick="getProduct(this)">
                             <img>
                             <!-- <button class="addToCart" onclick="addedToCart(this)"><i class="fa-solid fa-cart-plus"></i></button> -->
                             <div class="text-container">
@@ -144,6 +144,8 @@
             </div>
             <div class="productInfoSection">
                 <button onclick="backHome()">Home</button>
+                <img class="product-image">
+                <h4 class="product-title"></h4>
             </div>
         </main>
         <footer class="main-footer">
