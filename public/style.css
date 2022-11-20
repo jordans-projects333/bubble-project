@@ -133,6 +133,22 @@ body::-webkit-scrollbar-thumb{
     width: 100%;
     transition: 1s;
 }
+.slideOneIn{
+    left: 0 !important;
+    transition: .5s !important;
+}
+.slideOneOut{
+    left: 100% !important;
+    transition: 1s !important;
+}
+.slideTwoIn{
+    left: 0 !important;
+    transition: 1s !important;
+}
+.slideTwoOut{
+    left: -100% !important;
+    transition: .5s !important;
+}
 .logo-section{
     position: relative;
     margin-top: 5vh;

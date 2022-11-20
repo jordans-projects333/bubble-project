@@ -129,10 +129,14 @@ function filterClick(e){
 }
 
 function getProduct(){
-    document.querySelector(".productInfoSection").style.left = "0"
-    document.querySelector(".slideContent").style.left = "-100%"
+    document.querySelector(".productInfoSection").classList.remove("slideOneOut")
+    document.querySelector(".slideContent").classList.remove("slideTwoIn")
+    document.querySelector(".productInfoSection").classList.add("slideOneIn")
+    document.querySelector(".slideContent").classList.add("slideTwoOut")
 }
 function backHome(){
-    document.querySelector(".productInfoSection").style.left = "100%"
-    document.querySelector(".slideContent").style.left = "0"
+    document.querySelector(".productInfoSection").classList.remove("slideOneIn")
+    document.querySelector(".slideContent").classList.remove("slideTwoOut")
+    document.querySelector(".productInfoSection").classList.add("slideOneOut")
+    document.querySelector(".slideContent").classList.add("slideTwoIn")
 }
