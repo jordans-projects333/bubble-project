@@ -147,7 +147,7 @@ body::-webkit-scrollbar-thumb{
 }
 .slideTwoOut{
     left: -100% !important;
-    transition: 1s !important;
+    transition: .5s !important;
 }
 .logo-section{
     position: relative;
