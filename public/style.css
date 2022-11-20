@@ -562,7 +562,7 @@ body::-webkit-scrollbar-thumb{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: .8rem;
-    min-height: 60vh;
+    min-height: 50vh;
 }
 .grid-item{
     /* border-radius: 10px; */
@@ -588,12 +588,15 @@ body::-webkit-scrollbar-thumb{
     transform-origin: center;
     animation: refresh .2s forwards;
 }
+/* .loader{
+    
+} */
 .grid-item img{
     width: 100%;
     height: auto;
 }
 .text-container{
-    background-image: linear-gradient(rgba(82, 163, 255, 0),rgba(82, 163, 255, 0.421),rgba(82, 163, 255, 0.815));
+    /* background-image: linear-gradient(rgba(82, 163, 255, 0),rgba(82, 163, 255, 0.421),rgba(82, 163, 255, 0.815)); */
     position: absolute;
     bottom: 0;
     left: 0;
