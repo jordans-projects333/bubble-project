@@ -96,7 +96,7 @@ function filterClick(e){
             })
             break
         }
-        document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${total-document.querySelectorAll('.filter-hide').length -1})</span>`
+        document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${total-document.querySelectorAll('.filter-hide').length})</span>`
         document.querySelector(".product-number").classList.add("temp-spin")
 }
 
