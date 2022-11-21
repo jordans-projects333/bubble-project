@@ -61,13 +61,15 @@ fetch("/length")
     .then(response => response.json())
     .then(async data => {
         // await DataCollection(data)
+        let loadAmount = 4
         let lastIndex = await ultimate(data)
         await load()
-        await createItem(6)
-        if(lastIndex < 6){
-            await DataCollection(6, lastIndex)
+        
+        await createItem(loadAmount)
+        if(lastIndex < loadAmount){
+            await DataCollection(loadAmount, lastIndex)
         }
-        await dataPlusItem(0, 6)
+        await dataPlusItem(0, loadAmount)
 
         console.log(items)
         return data
