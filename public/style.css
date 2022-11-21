@@ -645,7 +645,7 @@ body::-webkit-scrollbar-thumb{
     height: auto;
 }
 .text-container{
-    /* background-image: linear-gradient(rgba(82, 163, 255, 0),rgba(82, 163, 255, 0.421),rgba(82, 163, 255, 0.815)); */
+    background-image: linear-gradient(rgba(82, 163, 255, 0),rgba(82, 163, 255, 0.421),rgba(82, 163, 255, 0.815));
     position: absolute;
     bottom: 0;
     left: 0;
