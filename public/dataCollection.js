@@ -89,7 +89,7 @@ fetch("/length")
     .then(async data => {
         // await DataCollection(data)
         let DataLength = data
-        let loadAmount = 6
+        let loadAmount = 1
         if(data > 40){
             data = 40
         }
@@ -104,7 +104,7 @@ fetch("/length")
         // get 4 empty spaces
         // await createItem(loadAmount)
         // if loaded is more than 4 empty spaces
-        let first = 1
+        let first = 0
         while(data >= loadAmount){
 
             console.log(data+"DATA")
