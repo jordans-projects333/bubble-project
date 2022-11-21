@@ -81,9 +81,9 @@ async function ultimate(maxDataIndex){
     while(running){
         if(document.readyState === "complete" ){
             running = false
-        }else if(dataIndex == 1000){
+        }else if(dataIndex == 100000){
             running = false
-        }else if(dataIndex == 1000){
+        }else if(dataIndex == 100000){
             running = false
         }else{
             
