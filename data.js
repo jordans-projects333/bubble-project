@@ -152,6 +152,6 @@ let data = {
         price: "£3.60",
         image: "./img/image_23.jpg",
         category: "bomb"
-    },
+    }
 }
 module.exports = { data }

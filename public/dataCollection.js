@@ -1,4 +1,4 @@
-async function documentLoad(){
+async function load(){
     let running = true
     while (running){
         if(document.readyState === "complete"){
@@ -33,9 +33,7 @@ async function DataCollection(number){
             .catch(err => console.log(err))
     }
 }
-
-async function createGridItems(number){
-
+async function createItem(number){
     for(let i = 0; i < number; i++){
         const template = document.querySelector("#grid-item-template")
         const the_content = template.content.cloneNode(true)
@@ -44,19 +42,67 @@ async function createGridItems(number){
         document.querySelector(".grid-container").appendChild(the_content)
     }
 }
+async function createGridItems(number){
+    let loadNumber = 4
+    let itemsLeft = number
+    let ppp = true
+    while(ppp){
+        if( itemsLeft >= loadNumber){
+            await createItem(loadNumber)
+            itemsLeft = itemsLeft - loadNumber
+        }else{
+            ppp = false
+        }
+    }
+    createItem(itemsLeft)
+}
+
 fetch("/length")
     .then(response => response.json())
     .then(async data => {
-        await DataCollection(data)
+        // await DataCollection(data)
+        await ultimate(data)
         return data
     })
-    .then(async data => {
-        await documentLoad()
-        await createGridItems(data)
-        document.querySelector("#main-loader").style.display = "none"
-        document.querySelector(".product-number").innerText = `(${data})`
-    })
+    // .then(async data => {
+    //     await load()
+    //     await createGridItems(data)
+    //     document.querySelector(".product-number").innerText = `(${data})`
+    // })
     .catch(err => {
         console.log(err)
 
     })
+
+async function ultimate(maxDataIndex){
+    let dataIndex = 0
+    let running = true
+    while(running){
+        console.log("fired")
+        if(document.readyState === "complete" ){
+            running = false
+        }else if(dataIndex == 3000){
+            running = false
+        }else if(dataIndex == 4000000){
+            running = false
+        }else{
+            await fetch(`item${dataIndex}`)
+                .then(response => response.json())
+                .then(data => {
+                    items.push(
+                        {
+                            category: data.category,
+                            description: data.description,
+                            image: data.image,
+                            name: data.name,
+                            price: data.price,
+                            element: `document.querySelectorAll(".grid-item")[${dataIndex}]`
+                    })
+                })
+                .catch(err => console.log(err))
+            dataIndex++
+            alert(dataIndex)
+        }
+    }
+    document.body.style.backgroundColor == "blue"
+}

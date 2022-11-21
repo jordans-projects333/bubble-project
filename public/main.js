@@ -15,7 +15,7 @@ function addToTheCart(image, name, price){
     // document.querySelector(".cart-container").appendChild(document.createElement("div"))
 }
 
-const delay = ms => new Promise(res => setTimeout(res, ms));
+// const delay = ms => new Promise(res => setTimeout(res, ms));
 async function addedToCart(e){
     addedItemText = e.parentNode.querySelector("h5").innerText
     const templateItem = document.querySelector("#addToCartTemplate")
