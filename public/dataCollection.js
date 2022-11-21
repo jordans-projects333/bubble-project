@@ -88,14 +88,15 @@ fetch("/length")
     .then(response => response.json())
     .then(async data => {
         // await DataCollection(data)
-        let loadAmount = 4
+        let DataLength = data
+        let loadAmount = 2
         if(data > 40){
             data = 40
         }
-        // let loadedAlready = await ultimate(data)
-        let loadedAlready = 5
-        console.log("one "+data)
-        await DataCollection(5, 0)
+        let loadedAlready = await ultimate(data)
+        // let loadedAlready = 5
+        // console.log("one "+data)
+        // await DataCollection(5, 0)
         await load()
         // Function Load the loadedAlready
         // Function get the rest
@@ -153,7 +154,7 @@ fetch("/length")
 
         console.log(items)
         console.log(data)
-        return data
+        return DataLength
     })
     // .then(async data => {
     //     await load()
