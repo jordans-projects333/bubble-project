@@ -61,7 +61,7 @@ fetch("/length")
     .then(response => response.json())
     .then(async data => {
         // await DataCollection(data)
-        await ultimate(data)
+        console.log(await ultimate(data))
         return data
     })
     // .then(async data => {
@@ -77,32 +77,20 @@ fetch("/length")
 async function ultimate(maxDataIndex){
     let dataIndex = 0
     let running = true
+    console.log("fired")
     while(running){
-        console.log("fired")
         if(document.readyState === "complete" ){
             running = false
-        }else if(dataIndex == 3000){
+        }else if(dataIndex == 1000){
             running = false
-        }else if(dataIndex == 4000000){
+        }else if(dataIndex == 1000){
             running = false
         }else{
-            await fetch(`item${dataIndex}`)
-                .then(response => response.json())
-                .then(data => {
-                    items.push(
-                        {
-                            category: data.category,
-                            description: data.description,
-                            image: data.image,
-                            name: data.name,
-                            price: data.price,
-                            element: `document.querySelectorAll(".grid-item")[${dataIndex}]`
-                    })
-                })
-                .catch(err => console.log(err))
+            
+                console.log(dataIndex)
+
             dataIndex++
-            alert(dataIndex)
         }
     }
-    document.body.style.backgroundColor == "blue"
+    return dataIndex
 }
