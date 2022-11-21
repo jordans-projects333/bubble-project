@@ -608,6 +608,14 @@ body::-webkit-scrollbar-thumb{
     left: 50%;
     /* border: red 1px solid; */
 }
+.loader-item-small{
+    top: 50% !important;
+}
+.item-circle{
+    height: 15px !important;
+    width: 15px !important;
+    margin: -13px !important;
+}
 .circle{
     display: inline-block;
     height: 30px;
@@ -637,7 +645,7 @@ body::-webkit-scrollbar-thumb{
     height: auto;
 }
 .text-container{
-    background-image: linear-gradient(rgba(82, 163, 255, 0),rgba(82, 163, 255, 0.421),rgba(82, 163, 255, 0.815));
+    /* background-image: linear-gradient(rgba(82, 163, 255, 0),rgba(82, 163, 255, 0.421),rgba(82, 163, 255, 0.815)); */
     position: absolute;
     bottom: 0;
     left: 0;

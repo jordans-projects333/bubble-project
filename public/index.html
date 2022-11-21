@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://kit.fontawesome.com/c18fd5402b.js" crossorigin="anonymous"></script>
+    <script>items = []</script>
+    <script async src="dataCollection.js"></script>
     <title>Bubbles</title>
 </head>
 <body>
@@ -106,7 +108,7 @@
                 </div>
                 <h4 class="products-title">Products<span class="product-number"></span></h4>
                 <div class="grid-container">
-                    <div class="loader">
+                    <div class="loader" id="main-loader">
                         <div class="loader-item">
                             <div class="circle"></div>
                             <div class="circle"></div>
@@ -114,6 +116,12 @@
                     </div>
                     <template id="grid-item-template">
                         <div class="grid-item" onclick="getProduct(this)">
+                            <div class="loader item-loader">
+                                <div class="loader-item loader-item-small">
+                                    <div class="circle item-circle"></div>
+                                    <div class="circle item-circle"></div>
+                                </div>
+                            </div>
                             <img>
                             <!-- <button class="addToCart" onclick="addedToCart(this)"><i class="fa-solid fa-cart-plus"></i></button> -->
                             <div class="text-container">
