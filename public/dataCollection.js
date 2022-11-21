@@ -89,7 +89,7 @@ fetch("/length")
     .then(async data => {
         // await DataCollection(data)
         let DataLength = data
-        let loadAmount = 1
+        let loadAmount = 2
         if(data > 40){
             data = 40
         }
