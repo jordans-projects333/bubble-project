@@ -77,18 +77,28 @@ fetch("/length")
 async function ultimate(maxDataIndex){
     let dataIndex = 0
     let running = true
-    console.log("fired")
     while(running){
         if(document.readyState === "complete" ){
             running = false
-        }else if(dataIndex == 100000){
+        }else if(dataIndex == 30){
             running = false
-        }else if(dataIndex == 100000){
+        }else if(dataIndex == maxDataIndex){
             running = false
         }else{
-            
-                console.log(dataIndex)
-
+            await fetch(`item${dataIndex}`)
+                .then(response => response.json())
+                .then(data => {
+                    items.push(
+                        {
+                            category: data.category,
+                            description: data.description,
+                            image: data.image,
+                            name: data.name,
+                            price: data.price,
+                            element: `document.querySelectorAll(".grid-item")[${dataIndex}]`
+                    })
+                })
+                .catch(err => console.log(err))
             dataIndex++
         }
     }
