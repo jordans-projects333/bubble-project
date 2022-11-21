@@ -88,6 +88,7 @@ fetch("/length")
     .then(response => response.json())
     .then(async data => {
         // await DataCollection(data)
+        document.querySelector(".product-number").innerText = `(${data})`
         let DataLength = data
         let loadAmount = 2
         if(data > 40){
