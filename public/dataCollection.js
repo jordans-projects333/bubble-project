@@ -7,8 +7,8 @@ async function load(){
     }
 }
 
-async function DataCollection(number){
-    for(let i = 0; i < number; i++){
+async function DataCollection(number, firstIndex){
+    for(let i = firstIndex; i < number; i++){
         // const template = document.querySelector("#grid-item-template")
         // const the_content = template.content.cloneNode(true)
         await fetch(`item${i}`)
@@ -61,7 +61,15 @@ fetch("/length")
     .then(response => response.json())
     .then(async data => {
         // await DataCollection(data)
-        alert(await ultimate(data))
+        let lastIndex = await ultimate(data)
+        await load()
+        await createItem(6)
+        if(lastIndex < 6){
+            await DataCollection(6, lastIndex)
+        }
+        await dataPlusItem(0, 6)
+
+        console.log(items)
         return data
     })
     // .then(async data => {
@@ -103,4 +111,12 @@ async function ultimate(maxDataIndex){
         }
     }
     return dataIndex
+}
+
+async function dataPlusItem(firstIndex, lastIndex){
+    for(let i = firstIndex; i < lastIndex; i++){
+        document.querySelectorAll(".grid-item")[i].querySelector("img").src = items[i].image
+        document.querySelectorAll(".grid-item")[i].querySelector("h5").innerHTML = items[i].price + "<br>"+items[i].name
+        document.querySelectorAll(".grid-item")[i].querySelector(".loader").style.display = "none"
+    }
 }
