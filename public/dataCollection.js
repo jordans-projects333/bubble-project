@@ -89,7 +89,7 @@ fetch("/length")
     .then(async data => {
         // await DataCollection(data)
         let DataLength = data
-        let loadAmount = 2
+        let loadAmount = 6
         if(data > 40){
             data = 40
         }
@@ -102,10 +102,12 @@ fetch("/length")
         // Function get the rest
 
         // get 4 empty spaces
-        await createItem(loadAmount)
+        // await createItem(loadAmount)
         // if loaded is more than 4 empty spaces
-        let first = 0
+        let first = 1
         while(data >= loadAmount){
+
+            console.log(data+"DATA")
             // LOADEDALREADY DATA FIRST
             while(loadedAlready > loadAmount && loadedAlready != 0){
                 await createItem(loadAmount)
@@ -128,7 +130,7 @@ fetch("/length")
             }
             console.log(loadedAlready+"EEEEEEE")
             // GET NEW DATA THAT WASNT ASYNC LOADED
-            while(data > loadAmount && data >= loadAmount){
+            while(data >= loadAmount){
                 console.log("fired")
                 await createItem(loadAmount)
                 await DataCollection(first + loadAmount , first + loadedAlready)
