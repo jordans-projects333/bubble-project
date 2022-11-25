@@ -109,7 +109,7 @@ async function mainFunction(){
 }
 // mainFunction()
 if(document.readyState == "complete"){
-    for(let i = 0; i < 8; i++){
+    for(let i = 0; i < 22; i++){
         const template = document.querySelector("#grid-item-template")
         const the_content = template.content.cloneNode(true)
         // the_content.querySelector("img").src = items[0].image
@@ -117,7 +117,7 @@ if(document.readyState == "complete"){
     }
 }else{
     window.addEventListener("load", () => {
-        for(let i = 0; i < 8; i++){
+        for(let i = 0; i < 22; i++){
             const template = document.querySelector("#grid-item-template")
             const the_content = template.content.cloneNode(true)
             // the_content.querySelector("img").src = items[0].image
