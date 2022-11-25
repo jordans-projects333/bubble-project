@@ -14,6 +14,11 @@
 // })
 
 // === Filter slider 
+// window.addEventListener("load", () => {
+//     // THiS AINT WORKING
+//     console.log("omg")
+//     // loadDataIntoItem(response.name, response.price,response.image)
+// });
 function sliderPosition(position){
     let firstPosition = document.querySelector(".filter-wrapper").children[position].getBoundingClientRect().left
     let secondPosition = document.querySelector(".filter-wrapper").children[position].getBoundingClientRect().right
@@ -41,6 +46,7 @@ function filterClick(e){
     switch(e.innerText) {
         case "All":
             sliderPosition(0)
+            dataSettings.filter = "priority"
             items.forEach((i, index)=>{
                 eval(i.element).classList.remove("filter-hide")
                 eval(i.element).classList.add("refreshAnimation")
@@ -50,6 +56,7 @@ function filterClick(e){
         case "Sets":
             sliderPosition(1)
             items.forEach((i)=>{
+                dataSettings.filter = "set"
                 if(i.category != "set"){
                     eval(i.element).classList.add("filter-hide")
                 }else{
@@ -61,6 +68,7 @@ function filterClick(e){
             break
         case "Bombs":
             sliderPosition(2)
+            dataSettings.filter = "bomb"
             items.forEach((i, index)=>{
                 if(i.category != "bomb"){
                     eval(i.element).classList.add("filter-hide")
@@ -73,6 +81,7 @@ function filterClick(e){
             break;
         case "Rocks":
             sliderPosition(3)
+            dataSettings.filter = "rocks"
             items.forEach((i)=>{
                 if(i.category != "rocks"){
                     eval(i.element).classList.add("filter-hide")
@@ -85,6 +94,7 @@ function filterClick(e){
             break
         case "Bars/Salts":
             sliderPosition(4)
+            dataSettings.filter = "bar"
             items.forEach((i)=>{
                 if(i.category != "bar"){
                     eval(i.element).classList.add("filter-hide")

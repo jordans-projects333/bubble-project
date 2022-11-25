@@ -59,6 +59,9 @@ totalData[0].total = Object.keys(data).length
 Object.keys(data).forEach(i =>{
     data[i].category.forEach((i) => {
         switch(i){
+            case "priority":
+                totalData[0].priority++
+                break
             case "set":
                 totalData[0].set++
                 break
@@ -121,7 +124,7 @@ setRequests("set")
 setRequests("bomb")
 setRequests("rocks")
 setRequests("bar")
-// console.log(totalData)
+console.log(totalData)
 // positions and routes added, add ignore lists to each filter and delete if ignore value is lower than current amount loaded
 // ===========================================================================================================================================================================================================
 // Webscraping salesNumber from Etsy

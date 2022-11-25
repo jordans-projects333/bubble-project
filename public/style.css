@@ -609,7 +609,7 @@ body::-webkit-scrollbar-thumb{
     /* border: red 1px solid; */
 }
 .loader-item-small{
-    top: 50% !important;
+    top: 30% !important;
 }
 .item-circle{
     height: 15px !important;
@@ -654,6 +654,36 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     align-items: flex-end;
     text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+.skeleton-div{
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: .5rem;
+    padding-left: .25rem;
+}
+.skeleton-text:last-child{
+    width: 55%;
+}
+.skeleton-text{
+    opacity: 0.7;
+    width: 80%;
+    height: 7px;
+    margin-top: .25rem;
+    animation: skeleton 1s linear infinite alternate;
+    z-index: 5;
+}
+@keyframes skeleton {
+    0%{
+        background-color: rgba(82, 163, 255);
+    }
+    100%{
+        background-color: rgb(0, 76, 162);
+    }
 }
 .grid-item h5{
     width: 85%;

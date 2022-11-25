@@ -154,8 +154,4 @@ let data = {
         category: ["bomb"]
     }
 }
-// for(let i = 0; i < 12; i++){
-//     data
-// }
-console.log(Object.keys[0])
 module.exports = { data }
