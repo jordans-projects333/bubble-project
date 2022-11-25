@@ -107,7 +107,25 @@ async function mainFunction(){
             console.log(err)
          })
 }
-mainFunction()
+// mainFunction()
+if(document.readyState == "complete"){
+    for(let i = 0; i < 8; i++){
+        const template = document.querySelector("#grid-item-template")
+        const the_content = template.content.cloneNode(true)
+        // the_content.querySelector("img").src = items[0].image
+        document.querySelector(".grid-container").appendChild(the_content)
+    }
+}else{
+    window.addEventListener("load", () => {
+        for(let i = 0; i < 8; i++){
+            const template = document.querySelector("#grid-item-template")
+            const the_content = template.content.cloneNode(true)
+            // the_content.querySelector("img").src = items[0].image
+            document.querySelector(".grid-container").appendChild(the_content)
+        }
+    })
+}
+
 // load more = +40 to 'number to load' and true = false
 // load selected filter first then load 
 // DataCollectionSettings = {
