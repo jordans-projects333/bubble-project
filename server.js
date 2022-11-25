@@ -45,14 +45,85 @@ Object.keys(data).forEach((i, index) => {
             name: data[i].name,
             image: data[i].image,
             price: data[i].price,
-            category: data[i].category
+            category: data[i].category[0]
         })
     });
 })
+// data will be fetch and totals added, 1 item fetched = +1 set and +1 bomb, it cant fetch a duplicate if one /itemBomb is a list and the first item gets popped?
+// what if http exist in a popable list?
+// if data was sent already then send next in line?
+// ================================================================================================================================================================================================
+// Set totals for each category
+totalData = [{total: 0, priority: 0, set: 0, bomb: 0, rocks: 0, bar: 0}]
+totalData[0].total = Object.keys(data).length
+Object.keys(data).forEach(i =>{
+    data[i].category.forEach((i) => {
+        switch(i){
+            case "set":
+                totalData[0].set++
+                break
+            case "bomb":
+                totalData[0].bomb++
+                break
+            case "rocks":
+                totalData[0].rocks++
+                break
+            case "bar":
+                totalData[0].bar++
+                break
+        }
+    })
+})
 server.get("/length", (req, res) => {
-    res.json(Object.keys(data).length)
+    res.json(totalData)
+})
+// Give data a position
+Object.keys(data).forEach((i) => {
+    data[i].position = [0, 0, 0, 0, 0]
 })
 
+// Set those positions
+function setPositions(filter, place){
+    let tempCount = 1
+    Object.keys(data).forEach((i, index) => {
+        data[i].category.forEach((event) => {
+            if(event == filter){
+                if(data[i].category.length > 0){
+                    data[i].position[place] = tempCount
+                    tempCount++
+                }
+            }
+        })
+    })
+}
+setPositions("priority", 0)
+setPositions("set", 1)
+setPositions("bomb", 2)
+setPositions("rocks", 3)
+setPositions("bar", 4)
+// console.log(data)
+
+function setRequests(filter){
+    let tempCount = 0
+    Object.keys(data).forEach((i, index) => {
+        data[i].category.forEach((event) => {
+            if(event == filter){
+                server.get(`/item/${filter}/${tempCount}`, (req, res) => {
+                    res.json(data[i])
+                })
+                tempCount++
+            }
+        })
+    })
+}
+setRequests("priority")
+setRequests("set")
+setRequests("bomb")
+setRequests("rocks")
+setRequests("bar")
+// console.log(totalData)
+// positions and routes added, add ignore lists to each filter and delete if ignore value is lower than current amount loaded
+// ===========================================================================================================================================================================================================
 // Webscraping salesNumber from Etsy
 request("https://www.etsy.com/shop/BeyondBasicBubbles#reviews", (error, response, html) => {
     if(!error && response.statusCode == 200){

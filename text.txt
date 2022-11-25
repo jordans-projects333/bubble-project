@@ -96,4 +96,7 @@ items total automatic not manually typed
 -Second hour
  - c/c++?
 
- 0987
+ New appraoch
+-collect data one by one
+- check if document is loaded each time
+-if its not loaded when all data is loaded then wait n load
