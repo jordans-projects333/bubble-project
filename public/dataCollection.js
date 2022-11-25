@@ -24,6 +24,7 @@ async function loadDataIntoItem(dataName, dataPrice, dataImage){
     getUnloadedElement.querySelector(".loader").style.display = "none"
     getUnloadedElement.classList.remove("unloaded")
     getUnloadedElement.querySelector(".pre-loading").remove()
+    getUnloadedElement.style.border = "none"
     dataSettings.storedElements.bomb.push(getUnloadedElement)
     console.log(dataSettings.storedElements.bomb[0])
 }
