@@ -18,7 +18,6 @@ server.set('view engine', 'ejs');
 server.get('/', (req, res) => {
     res.render("index")
 })
-
 // server.get('/', (req, res) => {
 //     res.send('hello')
 // })
@@ -48,6 +47,15 @@ Object.keys(data).forEach((i, index) => {
             category: data[i].category[0]
         })
     });
+})
+
+// ===== Image serving =====
+Object.keys(data).forEach((i) => {
+    let str = data[i].name
+    str = str.replace(/\s/g, '-')
+    server.get(`/product/${str}`, (req, res) =>{
+        res.sendFile(__dirname + `/serverImages/${data[i].image}`)
+    })
 })
 // data will be fetch and totals added, 1 item fetched = +1 set and +1 bomb, it cant fetch a duplicate if one /itemBomb is a list and the first item gets popped?
 // what if http exist in a popable list?

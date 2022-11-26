@@ -1,4 +1,13 @@
 // ===== Data collection =============================================================================================================================================================
+// fetch("/oo")
+//     .then(response => response.blob())
+//     .then(data => {
+//         console.log("test test")
+//         console.log(data)
+//     })
+//     .catch(err => {
+//         console.log(err)
+//     })
 // ===== Tracking searched items =====
 let searchedAlready = {
     priority: {value: 0, skip: []},
@@ -19,7 +28,9 @@ async function loadDataIntoItem(dataName, dataPrice, dataImage){
         }
     }
     let getUnloadedElement = document.querySelectorAll(".unloaded")[0]
-    getUnloadedElement.querySelector("img").src = dataImage
+    let str = dataName
+    str = str.replace(/\s/g, '-')
+    getUnloadedElement.querySelector("img").src = `/product/${str}`
     getUnloadedElement.querySelector("h5").innerHTML = dataPrice + "<br>"+dataName
     getUnloadedElement.querySelector(".loader").style.display = "none"
     getUnloadedElement.classList.remove("unloaded")
@@ -107,24 +118,25 @@ async function mainFunction(){
             console.log(err)
          })
 }
-// mainFunction()
-if(document.readyState == "complete"){
-    for(let i = 0; i < 22; i++){
-        const template = document.querySelector("#grid-item-template")
-        const the_content = template.content.cloneNode(true)
-        // the_content.querySelector("img").src = items[0].image
-        document.querySelector(".grid-container").appendChild(the_content)
-    }
-}else{
-    window.addEventListener("load", () => {
-        for(let i = 0; i < 22; i++){
-            const template = document.querySelector("#grid-item-template")
-            const the_content = template.content.cloneNode(true)
-            // the_content.querySelector("img").src = items[0].image
-            document.querySelector(".grid-container").appendChild(the_content)
-        }
-    })
-}
+mainFunction()
+
+// if(document.readyState == "complete"){
+//     for(let i = 0; i < 22; i++){
+//         const template = document.querySelector("#grid-item-template")
+//         const the_content = template.content.cloneNode(true)
+//         // the_content.querySelector("img").src = items[0].image
+//         document.querySelector(".grid-container").appendChild(the_content)
+//     }
+// }else{
+//     window.addEventListener("load", () => {
+//         for(let i = 0; i < 22; i++){
+//             const template = document.querySelector("#grid-item-template")
+//             const the_content = template.content.cloneNode(true)
+//             // the_content.querySelector("img").src = items[0].image
+//             document.querySelector(".grid-container").appendChild(the_content)
+//         }
+//     })
+// }
 
 // load more = +40 to 'number to load' and true = false
 // load selected filter first then load 
