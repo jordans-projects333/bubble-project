@@ -32,11 +32,12 @@ async function loadDataIntoItem(dataName, dataPrice, dataImage){
     str = str.replace(/\s/g, '-')
     getUnloadedElement.querySelector("img").loading = "lazy"
     getUnloadedElement.querySelector("img").src = `/product/${str}`
-    getUnloadedElement.querySelector("h5").innerHTML = dataPrice + "<br>"+dataName
-    getUnloadedElement.querySelector(".loader").style.display = "none"
+    getUnloadedElement.querySelector("img").addEventListener("load", () =>{
+        getUnloadedElement.querySelector(".loader").style.display = "none"
+        getUnloadedElement.style.border = "none"
+    })
     getUnloadedElement.classList.remove("unloaded")
-    getUnloadedElement.querySelector(".pre-loading").remove()
-    getUnloadedElement.style.border = "none"
+    getUnloadedElement.querySelector("h5").innerHTML = dataPrice + "<br>"+dataName
     dataSettings.storedElements.bomb.push(getUnloadedElement)
     // console.log(dataSettings.storedElements.bomb[0])
 }
