@@ -124,7 +124,6 @@ async function mainFunction(){
 const delay = ms => new Promise(res => setTimeout(res, ms));
 async function hhg(){
     for(let i = 0; i<40; i++){
-        await delay(500)
         mainFunction()
     }
 }
