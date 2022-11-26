@@ -2,7 +2,7 @@ let dataSettings = {
     allDataCollected : false,
     dataCollected : 0,
     allDataAppended: false,
-    filter: "priority",
+    filter: "rocks",
     numberOfFilters: 5,
     maximums: {
         priority: null,

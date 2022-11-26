@@ -158,7 +158,6 @@ async function gettingAlltheProducts(){
         }
     }
     while(dataSettings.dataCollected != dataSettings.maximums.total){
-        // await delay(5000)
         switch(dataSettings.filter) {
             case "priority":
                 if(Object.values(searchedAlready)[0].value != dataSettings.maximums.priority  && dataSettings.maximums.priority != null){
@@ -188,7 +187,7 @@ async function gettingAlltheProducts(){
                 if(Object.values(searchedAlready)[3].value != dataSettings.maximums.rocks  && dataSettings.maximums.rocks != null){
                     await dataCollection("rocks", 3, dataSettings.maximums.rocks)
                 }else{
-                    await roundRobin("priority", "set", "bomb", "rocks", 0, 1, 2, 4)
+                    await roundRobin("priority", "set", "bomb", "bar", 0, 1, 2, 4)
                 }
                 console.log(dataSettings.dataCollected)
                 break;
