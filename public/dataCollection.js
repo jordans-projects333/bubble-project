@@ -158,7 +158,7 @@ async function gettingAlltheProducts(){
         }
     }
     while(dataSettings.dataCollected != dataSettings.maximums.total){
-        await delay(5000)
+        // await delay(5000)
         switch(dataSettings.filter) {
             case "priority":
                 if(Object.values(searchedAlready)[0].value != dataSettings.maximums.priority  && dataSettings.maximums.priority != null){
