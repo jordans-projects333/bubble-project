@@ -28,7 +28,7 @@ let data = {
         category: ["set", "bomb"]
     },
     item5 : {
-        name: "Christmas bath bomb Gift Set",
+        name: "Christmas bath bomb Gift Set 2",
         description: "REDUCED PLASTIC, Christmas bath bombs, Organic, Vegan, Self Care, Custom Gifts for her, Bath bombs for kids",
         price: "£3.50",
         image: "image_7.jpg",

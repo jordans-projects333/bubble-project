@@ -2,8 +2,16 @@ let dataSettings = {
     allDataCollected : false,
     dataCollected : 0,
     allDataAppended: false,
-    filter: "bomb",
+    filter: "priority",
     numberOfFilters: 5,
+    maximums: {
+        priority: null,
+        set: null,
+        bomb: null,
+        rocks: null,
+        bar: null,
+        total: null
+    },
     storedElements: {
         priority: [],
         set: [],
@@ -11,8 +19,12 @@ let dataSettings = {
         rocks: [],
         bar: []
     }
-    // filter: all, sets, bombs, rocks, barsSalts
 }
 
 const numberOfRows = 2
 items = []
+
+// append element to relevent list
+// if filter change delete all grid items and start appending from relevant list
+// if all filter applied append from priority first then round robin the rest
+// when new item is collect add to list and append the last item in the list, if filter changed then read whole list

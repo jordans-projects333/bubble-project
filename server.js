@@ -62,30 +62,36 @@ Object.keys(data).forEach((i) => {
 // if data was sent already then send next in line?
 // ================================================================================================================================================================================================
 // Set totals for each category
-totalData = [{total: 0, priority: 0, set: 0, bomb: 0, rocks: 0, bar: 0}]
-totalData[0].total = Object.keys(data).length
+totalData = {total: 0, priority: 0, set: 0, bomb: 0, rocks: 0, bar: 0}
+totalData.total = Object.keys(data).length
 Object.keys(data).forEach(i =>{
     data[i].category.forEach((i) => {
         switch(i){
             case "priority":
-                totalData[0].priority++
+                totalData.priority++
                 break
             case "set":
-                totalData[0].set++
+                totalData.set++
                 break
             case "bomb":
-                totalData[0].bomb++
+                totalData.bomb++
                 break
             case "rocks":
-                totalData[0].rocks++
+                totalData.rocks++
                 break
             case "bar":
-                totalData[0].bar++
+                totalData.bar++
                 break
         }
     })
 })
-server.get("/length", (req, res) => {
+Object.keys(totalData).forEach(i =>{
+    if(totalData[i] == 0){
+        totalData[i] = null
+    }
+})
+
+server.get("/totals", (req, res) => {
     res.json(totalData)
 })
 // Give data a position

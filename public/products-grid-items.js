@@ -19,6 +19,7 @@
 //     console.log("omg")
 //     // loadDataIntoItem(response.name, response.price,response.image)
 // });
+
 function sliderPosition(position){
     let firstPosition = document.querySelector(".filter-wrapper").children[position].getBoundingClientRect().left
     let secondPosition = document.querySelector(".filter-wrapper").children[position].getBoundingClientRect().right
@@ -46,6 +47,7 @@ function filterClick(e){
     switch(e.innerText) {
         case "All":
             sliderPosition(0)
+            document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.total})</span>`
             dataSettings.filter = "priority"
             items.forEach((i, index)=>{
                 eval(i.element).classList.remove("filter-hide")
@@ -55,6 +57,7 @@ function filterClick(e){
             break;
         case "Sets":
             sliderPosition(1)
+            document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.set})</span>`
             items.forEach((i)=>{
                 dataSettings.filter = "set"
                 if(i.category != "set"){
@@ -68,6 +71,7 @@ function filterClick(e){
             break
         case "Bombs":
             sliderPosition(2)
+            document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bomb})</span>`
             dataSettings.filter = "bomb"
             items.forEach((i, index)=>{
                 if(i.category != "bomb"){
@@ -81,6 +85,7 @@ function filterClick(e){
             break;
         case "Rocks":
             sliderPosition(3)
+            document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.rocks})</span>`
             dataSettings.filter = "rocks"
             items.forEach((i)=>{
                 if(i.category != "rocks"){
@@ -94,6 +99,7 @@ function filterClick(e){
             break
         case "Bars/Salts":
             sliderPosition(4)
+            document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bar})</span>`
             dataSettings.filter = "bar"
             items.forEach((i)=>{
                 if(i.category != "bar"){
@@ -106,7 +112,6 @@ function filterClick(e){
             })
             break
         }
-        document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${total-document.querySelectorAll('.filter-hide').length})</span>`
         document.querySelector(".product-number").classList.add("temp-spin")
 }
 
