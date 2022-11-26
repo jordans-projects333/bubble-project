@@ -125,8 +125,10 @@ function getProduct(e){
     // Get data
     imageData = e.querySelector("img").src
     titleData = e.querySelector("h5").innerText
+    descriptionData = e.getAttribute('data-description');
     document.querySelector(".product-image").src = imageData
     document.querySelector(".product-title").innerText = titleData
+    document.querySelector(".product-description").innerText = descriptionData
 
     // Get Reviews
 }

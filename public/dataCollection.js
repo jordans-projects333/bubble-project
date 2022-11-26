@@ -18,7 +18,7 @@ let searchedAlready = {
 }
 
 // ===== Creating product item with data
-async function loadDataIntoItem(dataName, dataPrice, dataImage){
+async function loadDataIntoItem(dataName, dataPrice, category, dataDescription){
     if(document.querySelectorAll(".unloaded").length == 0){
         for(let i = 0; i < numberOfRows; i++){
             const template = document.querySelector("#grid-item-template")
@@ -32,13 +32,16 @@ async function loadDataIntoItem(dataName, dataPrice, dataImage){
     str = str.replace(/\s/g, '-')
     getUnloadedElement.querySelector("img").loading = "lazy"
     getUnloadedElement.querySelector("img").src = `/product/${str}`
+    getUnloadedElement.setAttribute('data-description', dataDescription)
     getUnloadedElement.querySelector("img").addEventListener("load", () =>{
         getUnloadedElement.querySelector(".loader").style.display = "none"
         getUnloadedElement.style.border = "none"
     })
     getUnloadedElement.classList.remove("unloaded")
     getUnloadedElement.querySelector("h5").innerHTML = dataPrice + "<br>"+dataName
-    dataSettings.storedElements.bomb.push(getUnloadedElement)
+    category.forEach(element => {
+        dataSettings.storedElements[element].push(getUnloadedElement)
+    })
     // console.log(dataSettings.storedElements.bomb[0])
 }
 
@@ -61,10 +64,10 @@ async function dataCollection(filter, filterNumber, filterMax){
             }
             // If window loaded then add product, else add event listener to call it on load
             if(document.readyState == "complete"){
-                loadDataIntoItem(response.name, response.price,response.image)
+                loadDataIntoItem(response.name, response.price, response.category, response.description)
             }else{
                 window.addEventListener("load", () => {
-                    loadDataIntoItem(response.name, response.price,response.image)
+                    loadDataIntoItem(response.name, response.price,response.image, response.category, response.description)
                 })
             }
         })
