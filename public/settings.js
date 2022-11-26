@@ -2,7 +2,7 @@ let dataSettings = {
     allDataCollected : false,
     dataCollected : 0,
     allDataAppended: false,
-    filter: "set",
+    filter: "bomb",
     numberOfFilters: 5,
     storedElements: {
         priority: [],

@@ -30,6 +30,7 @@ async function loadDataIntoItem(dataName, dataPrice, dataImage){
     let getUnloadedElement = document.querySelectorAll(".unloaded")[0]
     let str = dataName
     str = str.replace(/\s/g, '-')
+    getUnloadedElement.querySelector("img").loading = "lazy"
     getUnloadedElement.querySelector("img").src = `/product/${str}`
     getUnloadedElement.querySelector("h5").innerHTML = dataPrice + "<br>"+dataName
     getUnloadedElement.querySelector(".loader").style.display = "none"
@@ -37,7 +38,7 @@ async function loadDataIntoItem(dataName, dataPrice, dataImage){
     getUnloadedElement.querySelector(".pre-loading").remove()
     getUnloadedElement.style.border = "none"
     dataSettings.storedElements.bomb.push(getUnloadedElement)
-    console.log(dataSettings.storedElements.bomb[0])
+    // console.log(dataSettings.storedElements.bomb[0])
 }
 
 // ===== Collect a data item based on parameters =====
@@ -118,7 +119,15 @@ async function mainFunction(){
             console.log(err)
          })
 }
-mainFunction()
+
+const delay = ms => new Promise(res => setTimeout(res, ms));
+async function hhg(){
+    for(let i = 0; i<40; i++){
+        await delay(500)
+        mainFunction()
+    }
+}
+hhg()
 
 // if(document.readyState == "complete"){
 //     for(let i = 0; i < 22; i++){
