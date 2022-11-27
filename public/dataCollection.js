@@ -39,19 +39,20 @@ async function loadDataIntoItem(dataName, dataPrice, category, dataDescription){
     the_content.querySelector("div").classList.remove("unloaded")
     the_content.querySelector("h5").innerHTML = dataPrice + "<br>"+dataName
     // Store each element in list or multiple lists based on category
+    dataSettings.storedElements.all.push(the_content)
     category.forEach(element => {
         dataSettings.storedElements[element].push(the_content)
+        if(element == "priority"){
+            dataSettings.storedElements.all = dataSettings.storedElements.all.filter(item => item !== the_content)
+        }
     })
+    // document.querySelector(".grid-container").appendChild(the_content)
+    console.log(dataName)
+    console.log(category)
+    console.log(dataSettings.storedElements)
     // function to update(new data collected make sure all lists are appended), same function in filter
     // console.log(dataSettings.storedElements)
-    document.querySelector(".grid-container").appendChild(the_content)
-    console.log("I need " + document.querySelector(".grid-container").childElementCount)
-    let ee = document.querySelector(".grid-container").childElementCount - 1
-    console.log(ee)
-    document.querySelector(".grid-container").children[ee].querySelector("img").addEventListener("load", () =>{
-        document.querySelector(".grid-container").children[ee].querySelector(".loader").style.display = "none"
-        document.querySelector(".grid-container").children[ee].style.border = "none"
-    })
+   updateGrid()
 }
 
 // ===== Collect a data item based on parameters =====
@@ -149,7 +150,10 @@ fetch("/totals")
             })
         }
     })
-    .then(() => gettingAlltheProducts())
+    .then(async () => {
+        await gettingAlltheProducts()
+        console.log(dataSettings.storedElements)
+    })
     .catch(err => {
         console.log(err)
     })
@@ -192,7 +196,7 @@ async function gettingAlltheProducts(){
                 if(Object.values(searchedAlready)[2].value != dataSettings.maximums.bomb  && dataSettings.maximums.bomb != null){
                     await dataCollection("bomb", 2, dataSettings.maximums.bomb)
                 }else{
-                    await roundRobin("priority", "set", "bomb", "bar", 0, 1, 3, 4)
+                    await roundRobin("priority", "set", "rocks", "bar", 0, 1, 3, 4)
                 }
                 // console.log(dataSettings.dataCollected)
                 break;

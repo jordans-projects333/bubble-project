@@ -6,6 +6,9 @@
 //     let header = document.querySelector("header")
 //     if(filterPosition.getBoundingClientRect().top <= header.getBoundingClientRect().bottom){
 //         filter.classList.add("filter-sticky")
+
+
+
         
 
 //     }else{
@@ -46,90 +49,59 @@ function filterClick(e){
     e.classList.add("active-filter")
     switch(e.innerText) {
         case "All":
+            dataSettings.filter = "priority"
             sliderPosition(0)
             while(document.querySelector(".grid-container").childElementCount != 1){
                 document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
             }
-            createTemplateItems(dataSettings.maximums.total)
+            while(document.querySelector(".grid-container").childElementCount - 1 < dataSettings.maximums.total){
+                updateGrid()
+            }
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.total})</span>`
-            dataSettings.filter = "priority"
-            items.forEach((i, index)=>{
-                eval(i.element).classList.remove("filter-hide")
-                eval(i.element).classList.add("refreshAnimation")
-                // document.querySelector(".products-title").classList.add("refreshAnimation")
-            })
             break;
         case "Sets":
+            dataSettings.filter = "set"
             sliderPosition(1)
             while(document.querySelector(".grid-container").childElementCount != 1){
                 document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
             }
-            createTemplateItems(dataSettings.maximums.set)
+            while(document.querySelector(".grid-container").childElementCount - 1 < dataSettings.maximums.set){
+                updateGrid()
+            }
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.set})</span>`
-            items.forEach((i)=>{
-                dataSettings.filter = "set"
-                if(i.category != "set"){
-                    eval(i.element).classList.add("filter-hide")
-                }else{
-                    eval(i.element).classList.remove("filter-hide")
-                    eval(i.element).classList.add("refreshAnimation")
-                    // document.querySelector(".products-title").classList.add("refreshAnimation")
-                }
-            })
             break
         case "Bombs":
+            dataSettings.filter = "bomb"
             sliderPosition(2)
             while(document.querySelector(".grid-container").childElementCount != 1){
                 document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
             }
-            createTemplateItems(dataSettings.maximums.bomb)
+            while(document.querySelector(".grid-container").childElementCount - 1 < dataSettings.maximums.bomb){
+                updateGrid()
+            }
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bomb})</span>`
-            dataSettings.filter = "bomb"
-            items.forEach((i, index)=>{
-                if(i.category != "bomb"){
-                    eval(i.element).classList.add("filter-hide")
-                }else{
-                    eval(i.element).classList.remove("filter-hide")
-                    eval(i.element).classList.add("refreshAnimation")
-                    // document.querySelector(".products-title").classList.add("refreshAnimation")
-                }
-            })
             break;
         case "Rocks":
+            dataSettings.filter = "rocks"
             sliderPosition(3)
             while(document.querySelector(".grid-container").childElementCount != 1){
                 document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
             }
-            createTemplateItems(dataSettings.maximums.rocks)
+            while(document.querySelector(".grid-container").childElementCount - 1 < dataSettings.maximums.rocks){
+                updateGrid()
+            }
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.rocks})</span>`
-            dataSettings.filter = "rocks"
-            items.forEach((i)=>{
-                if(i.category != "rocks"){
-                    eval(i.element).classList.add("filter-hide")
-                }else{
-                    eval(i.element).classList.remove("filter-hide")
-                    eval(i.element).classList.add("refreshAnimation")
-                    // document.querySelector(".products-title").classList.add("refreshAnimation")
-                }
-            })
             break
         case "Bars/Salts":
+            dataSettings.filter = "bar"
             sliderPosition(4)
             while(document.querySelector(".grid-container").childElementCount != 1){
                 document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
             }
-            createTemplateItems(dataSettings.maximums.bar)
+            while(document.querySelector(".grid-container").childElementCount - 1 < dataSettings.maximums.bar){
+                updateGrid()
+            }
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bar})</span>`
-            dataSettings.filter = "bar"
-            items.forEach((i)=>{
-                if(i.category != "bar"){
-                    eval(i.element).classList.add("filter-hide")
-                }else{
-                    eval(i.element).classList.remove("filter-hide")
-                    eval(i.element).classList.add("refreshAnimation")
-                    document.querySelector(".products-title").classList.add("refreshAnimation")
-                }
-            })
             break
         }
         document.querySelector(".product-number").classList.add("temp-spin")
