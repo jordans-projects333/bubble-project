@@ -450,7 +450,7 @@ body::-webkit-scrollbar-thumb{
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
-    background-image: linear-gradient(rgb(82, 163, 255),rgba(82, 163, 255, 0));
+    /* background-image: linear-gradient(rgb(82, 163, 255),rgba(82, 163, 255, 0)); */
     /* background-color: rgb(82, 163, 255); */
     /* color: white; */
     /* text-shadow: rgb(0, 0, 0) 1px 0 10px; */
