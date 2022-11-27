@@ -17,32 +17,41 @@ let searchedAlready = {
     bar: {value: 0, skip: []}
 }
 
+// function createTemplateItems(number){
+//         for(let i = 0; i < number; i++){
+//             const template = document.querySelector("#grid-item-template")
+//             const the_content = template.content.cloneNode(true)
+//             document.querySelector(".grid-container").appendChild(the_content)
+//         }
+//     }
 // ===== Creating product item with data
 async function loadDataIntoItem(dataName, dataPrice, category, dataDescription){
-    if(document.querySelectorAll(".unloaded").length == 0){
-        for(let i = 0; i < numberOfRows; i++){
-            const template = document.querySelector("#grid-item-template")
-            const the_content = template.content.cloneNode(true)
-            // the_content.querySelector("img").src = items[0].image
-            document.querySelector(".grid-container").appendChild(the_content)
-        }
-    }
-    let getUnloadedElement = document.querySelectorAll(".unloaded")[0]
+    // Grab the first unloaded element
+    const template = document.querySelector("#grid-item-template")
+    const the_content = template.content.cloneNode(true)
+    // Add src that requests image from server
     let str = dataName
     str = str.replace(/\s/g, '-')
-    getUnloadedElement.querySelector("img").loading = "lazy"
-    getUnloadedElement.querySelector("img").src = `/product/${str}`
-    getUnloadedElement.setAttribute('data-description', dataDescription)
-    getUnloadedElement.querySelector("img").addEventListener("load", () =>{
-        getUnloadedElement.querySelector(".loader").style.display = "none"
-        getUnloadedElement.style.border = "none"
-    })
-    getUnloadedElement.classList.remove("unloaded")
-    getUnloadedElement.querySelector("h5").innerHTML = dataPrice + "<br>"+dataName
+    the_content.querySelector("img").src = `/product/${str}`
+    the_content.querySelector("img").loading = "lazy"
+    // add the other attributes
+    the_content.querySelector("div").setAttribute('data-description', dataDescription)
+    the_content.querySelector("div").classList.remove("unloaded")
+    the_content.querySelector("h5").innerHTML = dataPrice + "<br>"+dataName
+    // Store each element in list or multiple lists based on category
     category.forEach(element => {
-        dataSettings.storedElements[element].push(getUnloadedElement)
+        dataSettings.storedElements[element].push(the_content)
     })
-    // console.log(dataSettings.storedElements.bomb[0])
+    // function to update(new data collected make sure all lists are appended), same function in filter
+    // console.log(dataSettings.storedElements)
+    document.querySelector(".grid-container").appendChild(the_content)
+    console.log("I need " + document.querySelector(".grid-container").childElementCount)
+    let ee = document.querySelector(".grid-container").childElementCount - 1
+    console.log(ee)
+    document.querySelector(".grid-container").children[ee].querySelector("img").addEventListener("load", () =>{
+        document.querySelector(".grid-container").children[ee].querySelector(".loader").style.display = "none"
+        document.querySelector(".grid-container").children[ee].style.border = "none"
+    })
 }
 
 // ===== Collect a data item based on parameters =====
@@ -90,6 +99,7 @@ async function dataCollection(filter, filterNumber, filterMax){
 fetch("/totals")
     .then(response => response.json())
     .then(data => {
+        // createTemplateItems(data.total)
         dataSettings.maximums.total = data.total
         dataSettings.maximums.priority = data.priority
         dataSettings.maximums.set = data.set
@@ -168,7 +178,7 @@ async function gettingAlltheProducts(){
                 }else{
                     await roundRobin("set", "bomb", "rocks", "bar", 1, 2, 3, 4)
                 }
-                console.log(dataSettings.dataCollected)
+                // console.log(dataSettings.dataCollected)
                 break;
             case "set":
                 if(Object.values(searchedAlready)[1].value != dataSettings.maximums.set  && dataSettings.maximums.set != null){
@@ -176,7 +186,7 @@ async function gettingAlltheProducts(){
                 }else{
                     await roundRobin("priority", "bomb", "rocks", "bar", 0, 2, 3, 4)
                 }
-                console.log(dataSettings.dataCollected)
+                // console.log(dataSettings.dataCollected)
                 break;
             case "bomb":
                 if(Object.values(searchedAlready)[2].value != dataSettings.maximums.bomb  && dataSettings.maximums.bomb != null){
@@ -184,7 +194,7 @@ async function gettingAlltheProducts(){
                 }else{
                     await roundRobin("priority", "set", "bomb", "bar", 0, 1, 3, 4)
                 }
-                console.log(dataSettings.dataCollected)
+                // console.log(dataSettings.dataCollected)
                 break;
             case "rocks":
                 if(Object.values(searchedAlready)[3].value != dataSettings.maximums.rocks  && dataSettings.maximums.rocks != null){
@@ -192,7 +202,7 @@ async function gettingAlltheProducts(){
                 }else{
                     await roundRobin("priority", "set", "bomb", "bar", 0, 1, 2, 4)
                 }
-                console.log(dataSettings.dataCollected)
+                // console.log(dataSettings.dataCollected)
                 break;
             case "bar":
                 if(Object.values(searchedAlready)[4].value != dataSettings.maximums.bar  && dataSettings.maximums.bar != null){
@@ -200,13 +210,13 @@ async function gettingAlltheProducts(){
                 }else{
                     await roundRobin("priority", "set", "bomb", "rocks", 0, 1, 2, 3)
                 }
-                console.log(dataSettings.dataCollected)
+                // console.log(dataSettings.dataCollected)
                 break;
         }
     }
 }
 
-
+console.log("fix duplicate callback function")
 // const delay = ms => new Promise(res => setTimeout(res, ms));
 // async function hhg(){
 //     for(let i = 0; i<40; i++){

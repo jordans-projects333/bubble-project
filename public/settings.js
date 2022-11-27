@@ -2,7 +2,7 @@ let dataSettings = {
     allDataCollected : false,
     dataCollected : 0,
     allDataAppended: false,
-    filter: "rocks",
+    filter: "priority",
     numberOfFilters: 5,
     maximums: {
         priority: null,
@@ -24,6 +24,13 @@ let dataSettings = {
 const numberOfRows = 2
 items = []
 
+function createTemplateItems(number){
+    for(let i = 0; i < number; i++){
+        const template = document.querySelector("#grid-item-template")
+        const the_content = template.content.cloneNode(true)
+        document.querySelector(".grid-container").appendChild(the_content)
+    }
+}
 // append element to relevent list
 // if filter change delete all grid items and start appending from relevant list
 // if all filter applied append from priority first then round robin the rest

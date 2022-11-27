@@ -47,6 +47,10 @@ function filterClick(e){
     switch(e.innerText) {
         case "All":
             sliderPosition(0)
+            while(document.querySelector(".grid-container").childElementCount != 1){
+                document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
+            }
+            createTemplateItems(dataSettings.maximums.total)
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.total})</span>`
             dataSettings.filter = "priority"
             items.forEach((i, index)=>{
@@ -57,6 +61,10 @@ function filterClick(e){
             break;
         case "Sets":
             sliderPosition(1)
+            while(document.querySelector(".grid-container").childElementCount != 1){
+                document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
+            }
+            createTemplateItems(dataSettings.maximums.set)
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.set})</span>`
             items.forEach((i)=>{
                 dataSettings.filter = "set"
@@ -71,6 +79,10 @@ function filterClick(e){
             break
         case "Bombs":
             sliderPosition(2)
+            while(document.querySelector(".grid-container").childElementCount != 1){
+                document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
+            }
+            createTemplateItems(dataSettings.maximums.bomb)
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bomb})</span>`
             dataSettings.filter = "bomb"
             items.forEach((i, index)=>{
@@ -85,6 +97,10 @@ function filterClick(e){
             break;
         case "Rocks":
             sliderPosition(3)
+            while(document.querySelector(".grid-container").childElementCount != 1){
+                document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
+            }
+            createTemplateItems(dataSettings.maximums.rocks)
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.rocks})</span>`
             dataSettings.filter = "rocks"
             items.forEach((i)=>{
@@ -99,6 +115,10 @@ function filterClick(e){
             break
         case "Bars/Salts":
             sliderPosition(4)
+            while(document.querySelector(".grid-container").childElementCount != 1){
+                document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
+            }
+            createTemplateItems(dataSettings.maximums.bar)
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bar})</span>`
             dataSettings.filter = "bar"
             items.forEach((i)=>{
