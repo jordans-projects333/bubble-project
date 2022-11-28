@@ -39,20 +39,40 @@ async function loadDataIntoItem(dataName, dataPrice, category, dataDescription){
     the_content.querySelector("div").classList.remove("unloaded")
     the_content.querySelector("h5").innerHTML = dataPrice + "<br>"+dataName
     // Store each element in list or multiple lists based on category
-    dataSettings.storedElements.all.push(the_content)
-    category.forEach(element => {
-        dataSettings.storedElements[element].push(the_content)
-        if(element == "priority"){
-            dataSettings.storedElements.all = dataSettings.storedElements.all.filter(item => item !== the_content)
-        }
+    // dataSettings.storedElements.all.push(the_content)
+    // category.forEach(element => {
+    //     dataSettings.storedElements[element].push(the_content)
+    //     if(element == "priority"){
+    //         dataSettings.storedElements.all = dataSettings.storedElements.all.filter(item => item !== the_content)
+    //     }
+    // })
+    document.querySelector(".grid-container").appendChild(the_content)
+    let hii = document.querySelector(".grid-container").children[document.querySelector(".grid-container").childElementCount - 1]
+    console.log(hii)
+    hii.querySelector("img").addEventListener("load", () =>{
+        console.log(the_content.querySelector(".loader"))
+        hii.querySelector(".loader").style.display = "none"
+        hii.style.border = "none"
     })
-    // document.querySelector(".grid-container").appendChild(the_content)
-    console.log(dataName)
-    console.log(category)
-    console.log(dataSettings.storedElements)
+    category.forEach(element => {
+        // console.log(element)
+        hii.classList.add(`${element}`)
+    })
+    if(dataSettings.filter != "priority"){
+        if(!hii.classList.contains(`${dataSettings.filter}`)){
+            hii.classList.add("hide")
+        }
+    }
+    
+
+   
+    
+    // console.log(dataName)
+    // console.log(category)
+    // console.log(dataSettings.storedElements)
     // function to update(new data collected make sure all lists are appended), same function in filter
     // console.log(dataSettings.storedElements)
-   updateGrid()
+//    updateGrid()
 }
 
 // ===== Collect a data item based on parameters =====

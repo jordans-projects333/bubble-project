@@ -36,6 +36,7 @@ sliderPosition(0)
 // Creating the product grid from data
 function filterClick(e){
     document.querySelector(".product-number").classList.remove("temp-spin")
+    document.querySelectorAll(".grid-item").forEach((element)=> element.classList.remove("filter-hide"))
     let slider = document.querySelector(".filter-slider")
     let total = (document.querySelector(".grid-container").childElementCount) -1
     document.querySelectorAll(".filter-item").forEach((item) => {
@@ -51,56 +52,47 @@ function filterClick(e){
         case "All":
             dataSettings.filter = "priority"
             sliderPosition(0)
-            while(document.querySelector(".grid-container").childElementCount != 1){
-                document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
-            }
-            while(document.querySelector(".grid-container").childElementCount - 1 < dataSettings.maximums.total){
-                updateGrid()
-            }
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.total})</span>`
             break;
         case "Sets":
             dataSettings.filter = "set"
             sliderPosition(1)
-            while(document.querySelector(".grid-container").childElementCount != 1){
-                document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
-            }
-            while(document.querySelector(".grid-container").childElementCount - 1 < dataSettings.maximums.set){
-                updateGrid()
-            }
+            document.querySelectorAll(".grid-item").forEach((element)=> {
+                if(!element.classList.contains("set")){
+                    element.classList.add("filter-hide")
+                }
+            })
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.set})</span>`
             break
         case "Bombs":
             dataSettings.filter = "bomb"
             sliderPosition(2)
-            while(document.querySelector(".grid-container").childElementCount != 1){
-                document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
-            }
-            while(document.querySelector(".grid-container").childElementCount - 1 < dataSettings.maximums.bomb){
-                updateGrid()
-            }
+            document.querySelectorAll(".grid-item").forEach((element)=> {
+                if(!element.classList.contains("bomb")){
+                    element.classList.add("filter-hide")
+                }
+            })
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bomb})</span>`
             break;
         case "Rocks":
             dataSettings.filter = "rocks"
             sliderPosition(3)
-            while(document.querySelector(".grid-container").childElementCount != 1){
-                document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
-            }
-            while(document.querySelector(".grid-container").childElementCount - 1 < dataSettings.maximums.rocks){
-                updateGrid()
-            }
+            
+            document.querySelectorAll(".grid-item").forEach((element)=> {
+                if(!element.classList.contains("rocks")){
+                    element.classList.add("filter-hide")
+                }
+            })
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.rocks})</span>`
             break
         case "Bars/Salts":
             dataSettings.filter = "bar"
             sliderPosition(4)
-            while(document.querySelector(".grid-container").childElementCount != 1){
-                document.querySelector(".grid-container").removeChild(document.querySelector(".grid-item"))
-            }
-            while(document.querySelector(".grid-container").childElementCount - 1 < dataSettings.maximums.bar){
-                updateGrid()
-            }
+            document.querySelectorAll(".grid-item").forEach((element)=> {
+                if(!element.classList.contains("bar")){
+                    element.classList.add("filter-hide")
+                }
+            })
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bar})</span>`
             break
         }
