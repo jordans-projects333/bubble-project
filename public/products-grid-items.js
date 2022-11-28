@@ -49,7 +49,7 @@ function filterClick(e){
     // document.querySelector(".product-number").classList.remove("refreshAnimation")
     e.classList.add("active-filter")
     switch(e.querySelector(".filter-text").innerText) {
-        case "All":
+        case "All products":
             dataSettings.filter = "priority"
             sliderPosition(0)
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.total})</span>`
@@ -64,7 +64,7 @@ function filterClick(e){
             })
             document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.set})</span>`
             break
-        case "Bombs":
+        case "Bath bombs":
             dataSettings.filter = "bomb"
             sliderPosition(2)
             document.querySelectorAll(".grid-item").forEach((element)=> {
