@@ -22,8 +22,8 @@ body::-webkit-scrollbar-thumb{
     top: 0;
     background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur( 30px );
-    -webkit-backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
     /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
     height: 5vh;
     /* border-bottom: #e70087 1px solid; */
@@ -504,8 +504,8 @@ body::-webkit-scrollbar-thumb{
     margin-bottom: .5rem;
     background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur( 30px );
-    -webkit-backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
     /* border: red 1px solid; */
 
 }
