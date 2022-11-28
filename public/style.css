@@ -15,7 +15,7 @@ body::-webkit-scrollbar-thumb{
 }
 /* === Header === */
 .main-header{
-    overflow:hidden;
+    /* overflow:hidden; */
     display: flex;
     width: 100%;
     /* background: linear-gradient(rgba(0, 0, 0,0.7) 50%,rgba(0,0,0,0)); */
@@ -24,7 +24,7 @@ body::-webkit-scrollbar-thumb{
     /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
     height: 5vh;
     /* border-bottom: #e70087 1px solid; */
-    z-index: 99;
+    z-index: 98;
 }
 /* Title */
 .glass{
@@ -503,8 +503,9 @@ body::-webkit-scrollbar-thumb{
     }
 }
 .filter{
+    overflow-anchor: none;
     position: sticky;
-    top: calc(5vh - 1px);
+    top: calc(5vh - 0px);
     z-index: 20;
     width: 100%;
     margin-bottom: .5rem;
