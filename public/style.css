@@ -547,6 +547,9 @@ body::-webkit-scrollbar-thumb{
 .filter-icon{
     font-size: 1rem;
 }
+.filter-icon:first-child{
+    font-size: .7rem;
+}
 /* not in use */
 .active-filter{
     /* border-bottom: 3px solid rgb(5, 120, 174); */
@@ -563,7 +566,7 @@ body::-webkit-scrollbar-thumb{
     height: 100%;
     /* border: red solid 1px; */
     /* border-bottom: 3px solid rgb(94, 204, 255); */
-    background-color:rgb(49, 158, 209); 
+    background-color:rgba(49, 158, 209, 0); 
     border-radius: 5px;
     transition: .2s;
     pointer-events: none;
