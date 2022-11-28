@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: green;
+}
 /* === Scrollbar === */
 body::-webkit-scrollbar{
     width: 0.25rem;
