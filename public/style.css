@@ -503,7 +503,6 @@ body::-webkit-scrollbar-thumb{
     }
 }
 .filter{
-    margin-top: -5px;
     position: sticky;
     top: calc(5vh - 2px);
     z-index: 20;
