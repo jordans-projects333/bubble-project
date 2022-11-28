@@ -548,7 +548,7 @@ body::-webkit-scrollbar-thumb{
 .active-filter{
     /* border-bottom: 3px solid rgb(5, 120, 174); */
     /* background-color: rgb(5, 120, 174); */
-    color: white;
+    color: rgb(49, 158, 209);
     transition: .2s;
     /* text-decoration: solid; */
 }
