@@ -30,8 +30,8 @@ body::-webkit-scrollbar-thumb{
     background: linear-gradient(rgba( 255, 255, 255) 10%, rgba( 255, 255, 255, 0.8 ) 90%);
     /* background: rgba( 255, 255, 255, 0.8 ); */
     /* box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    /* -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); */
     overflow:hidden;
     display: flex;
     width: 100%;
@@ -42,14 +42,13 @@ body::-webkit-scrollbar-thumb{
     height: 5vh;
     /* border-bottom: #e70087 1px solid; */
     z-index: 99;
-    clip-path: url(.filter);
 }
 /* Title */
 .glass{
     background: rgba( 255, 255, 255, 0.8 );
     /* box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    /* -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); */
 }
 .title{
     flex: 6;
@@ -522,8 +521,7 @@ body::-webkit-scrollbar-thumb{
 }
 .filter{
     position: sticky;
-    top: 4.5vh;
-    clip-path: url(.main-header);
+    top: 5vh;
     z-index: 20;
     width: 100%;
     margin-bottom: .5rem;
