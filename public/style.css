@@ -532,12 +532,14 @@ body::-webkit-scrollbar-thumb{
 }
 .filter-item{
     display: flex;
+    flex-direction: column;
     /* border: 1px black solid; */
     align-items: center;
     /* margin-left: 1.5rem; */
     /* padding-bottom: .25rem; */
     /* font-weight: 300; */
-    font-size: 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 100;
     /* border: red solid 1px; */
     /* padding-left: 1rem;
     padding-right: 1rem; */
