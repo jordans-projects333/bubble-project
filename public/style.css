@@ -522,7 +522,7 @@ body::-webkit-scrollbar-thumb{
 }
 .filter{
     position: sticky;
-    top: 4.7vh;
+    top: 4.5vh;
     clip-path: url(.main-header);
     z-index: 20;
     width: 100%;
