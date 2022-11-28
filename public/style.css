@@ -534,7 +534,7 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     flex-direction: column;
     /* border: 1px black solid; */
-    align-items: center;
+    text-align: center;
     /* margin-left: 1.5rem; */
     /* padding-bottom: .25rem; */
     /* font-weight: 300; */
@@ -543,6 +543,9 @@ body::-webkit-scrollbar-thumb{
     /* border: red solid 1px; */
     /* padding-left: 1rem;
     padding-right: 1rem; */
+}
+.filter-icon{
+    font-size: 1rem;
 }
 /* not in use */
 .active-filter{
@@ -662,7 +665,7 @@ body::-webkit-scrollbar-thumb{
     height: auto;
 }
 .text-container{
-    background-image: linear-gradient(rgba(82, 163, 255, 0),rgba(82, 163, 255, 0.421),rgba(82, 163, 255, 0.815));
+    /* background-image: linear-gradient(rgba(82, 163, 255, 0),rgba(82, 163, 255, 0.421),rgba(82, 163, 255, 0.815)); */
     position: absolute;
     bottom: 0;
     left: 0;
