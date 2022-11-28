@@ -3,18 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    height: 100%;
-    overflow: hidden;
-}
-.issueFix{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
-}
+
 /* === Scrollbar === */
 body::-webkit-scrollbar{
     width: 0.25rem;
