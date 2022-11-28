@@ -42,6 +42,7 @@ body::-webkit-scrollbar-thumb{
     height: 5vh;
     /* border-bottom: #e70087 1px solid; */
     z-index: 99;
+    clip-path: url(.filter);
 }
 /* Title */
 .glass{
@@ -521,7 +522,8 @@ body::-webkit-scrollbar-thumb{
 }
 .filter{
     position: sticky;
-    top: 5vh;
+    top: 4.7vh;
+    clip-path: url(.main-header);
     z-index: 20;
     width: 100%;
     margin-bottom: .5rem;
