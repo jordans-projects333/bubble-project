@@ -59,8 +59,9 @@ async function loadDataIntoItem(dataName, dataPrice, category, dataDescription){
         hii.classList.add(`${element}`)
     })
     if(dataSettings.filter != "priority"){
+        console.log("goose")
         if(!hii.classList.contains(`${dataSettings.filter}`)){
-            hii.classList.add("hide")
+            hii.classList.add("filter-hide")
         }
     }
     
@@ -195,6 +196,7 @@ async function gettingAlltheProducts(){
         }
     }
     while(dataSettings.dataCollected != dataSettings.maximums.total){
+        await delay(3000)
         switch(dataSettings.filter) {
             case "priority":
                 if(Object.values(searchedAlready)[0].value != dataSettings.maximums.priority  && dataSettings.maximums.priority != null){
