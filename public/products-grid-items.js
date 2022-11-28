@@ -48,7 +48,7 @@ function filterClick(e){
     })
     // document.querySelector(".product-number").classList.remove("refreshAnimation")
     e.classList.add("active-filter")
-    switch(e.innerText) {
+    switch(e.querySelector(".filter-text").innerText) {
         case "All":
             dataSettings.filter = "priority"
             sliderPosition(0)
