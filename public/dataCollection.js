@@ -37,7 +37,7 @@ async function loadDataIntoItem(dataName, dataPrice, category, dataDescription){
     // add the other attributes
     the_content.querySelector("div").setAttribute('data-description', dataDescription)
     the_content.querySelector("div").classList.remove("unloaded")
-    the_content.querySelector("h5").innerHTML = dataPrice + "<br>"+dataName
+    the_content.querySelector("h5").innerHTML = "<span class='price'>"+dataPrice + "</span><br>"+dataName
     // Store each element in list or multiple lists based on category
     // dataSettings.storedElements.all.push(the_content)
     // category.forEach(element => {

@@ -620,6 +620,12 @@ body::-webkit-scrollbar-thumb{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
+.price{
+    background-color: rgb(85, 201, 255);
+    border-radius: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
 .grid-item:nth-child(4n){
     grid-row: span 2 / auto;
     height: 240px;
