@@ -624,8 +624,11 @@ body::-webkit-scrollbar-thumb{
 .price{
     background-color: rgb(85, 201, 255);
     /* border-radius: 10px; */
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.product-name{
+    font-weight: 100;
 }
 .grid-item:nth-child(4n){
     grid-row: span 2 / auto;
