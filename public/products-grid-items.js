@@ -35,7 +35,7 @@ sliderPosition(0)
 // let items = []
 // Creating the product grid from data
 function filterClick(e){
-    document.querySelector(".product-number").classList.remove("temp-spin")
+    // document.querySelector(".product-number").classList.remove("temp-spin")
     document.querySelectorAll(".grid-item").forEach((element)=> element.classList.remove("filter-hide"))
     let slider = document.querySelector(".filter-slider")
     let total = (document.querySelector(".grid-container").childElementCount) -1
@@ -52,7 +52,7 @@ function filterClick(e){
         case "All products":
             dataSettings.filter = "priority"
             sliderPosition(0)
-            document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.total})</span>`
+            // document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.total})</span>`
             break;
         case "Sets":
             dataSettings.filter = "set"
@@ -62,7 +62,7 @@ function filterClick(e){
                     element.classList.add("filter-hide")
                 }
             })
-            document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.set})</span>`
+            // document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.set})</span>`
             break
         case "Bath bombs":
             dataSettings.filter = "bomb"
@@ -72,7 +72,7 @@ function filterClick(e){
                     element.classList.add("filter-hide")
                 }
             })
-            document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bomb})</span>`
+            // document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bomb})</span>`
             break;
         case "Rocks":
             dataSettings.filter = "rocks"
@@ -83,7 +83,7 @@ function filterClick(e){
                     element.classList.add("filter-hide")
                 }
             })
-            document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.rocks})</span>`
+            // document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.rocks})</span>`
             break
         case "Bars/Salts":
             dataSettings.filter = "bar"
@@ -93,10 +93,10 @@ function filterClick(e){
                     element.classList.add("filter-hide")
                 }
             })
-            document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bar})</span>`
+            // document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bar})</span>`
             break
         }
-        document.querySelector(".product-number").classList.add("temp-spin")
+        // document.querySelector(".product-number").classList.add("temp-spin")
 }
 
 function getProduct(e){
