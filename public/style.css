@@ -772,7 +772,7 @@ body::-webkit-scrollbar-thumb{
 }
 .grid-item h5{
     width: 100%;
-    font-size: .7rem;
+    font-size: .9rem;
     color: black;
     padding: .25rem;
     /* border: 1px solid black; */
