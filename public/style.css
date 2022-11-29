@@ -163,10 +163,10 @@ body::-webkit-scrollbar-thumb{
     transition: 1s !important;
 }
 .logo-section{
-    overflow:hidden;
+    border-radius: 10px;
     position: relative;
     margin-top: 5vh;
-    width: 100%;
+    width: 95%;
     /* background: url(./img/image_17.jpg); */
     background: url(./img/back2.jpg);
     background-size: 100% 100%;

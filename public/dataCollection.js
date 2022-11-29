@@ -128,48 +128,6 @@ fetch("/totals")
         dataSettings.maximums.bomb = data.bomb
         dataSettings.maximums.rocks = data.rocks
         dataSettings.maximums.bar = data.bar
-        if(document.readyState == "complete"){
-            document.querySelector(".products-title").classList.remove("filter-hide")
-            switch(dataSettings.filter){
-                case "priority":
-                    document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.total})</span>`
-                    break
-                case "set":
-                    document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.set})</span>`
-                    break
-                case "bomb":
-                    document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bomb})</span>`
-                    break
-                case "rocks":
-                    document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.rocks})</span>`
-                    break
-                case "bar":
-                    document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bar})</span>`
-                    break
-            }
-            
-        }else{
-            window.addEventListener("load", () => {
-                document.querySelector(".products-title").classList.remove("filter-hide")
-                switch(dataSettings.filter){
-                    case "priority":
-                        document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.total})</span>`
-                        break
-                    case "set":
-                        document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.set})</span>`
-                        break
-                    case "bomb":
-                        document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bomb})</span>`
-                        break
-                    case "rocks":
-                        document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.rocks})</span>`
-                        break
-                    case "bar":
-                        document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bar})</span>`
-                        break
-                }
-            })
-        }
     })
     .then(async () => {
         await gettingAlltheProducts()
