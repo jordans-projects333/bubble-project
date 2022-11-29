@@ -169,7 +169,7 @@ body::-webkit-scrollbar-thumb{
     position: relative;
     margin-top: 5vh;
     width: 95%;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     /* background: url(./img/image_17.jpg); */
     background: url(./img/back2.jpg);
     background-size: 100% 100%;
