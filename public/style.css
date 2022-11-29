@@ -100,7 +100,7 @@ body::-webkit-scrollbar-thumb{
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: rgb(49, 158, 209);
+    background-color: black;
 }
 /* Header media queries */
 @media(max-width:768px){
