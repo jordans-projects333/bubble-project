@@ -807,7 +807,7 @@ body::-webkit-scrollbar-thumb{
 }
 /* === Footer === */
 .main-footer{
-    background-color: #001448;
+    background-color: rgb(49, 158, 209);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -815,7 +815,7 @@ body::-webkit-scrollbar-thumb{
 .footer-inner-container{
    width: 90%;
    display: flex;
-   margin: 20px 0px 30px 0px;
+   margin: 10px 0px 10px 0px;
 }
 .footer-col{
     flex: 1;
