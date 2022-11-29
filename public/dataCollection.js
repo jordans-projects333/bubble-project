@@ -52,7 +52,7 @@ async function loadDataIntoItem(dataName, dataPrice, category, dataDescription){
     hii.querySelector("img").addEventListener("load", () =>{
         console.log(the_content.querySelector(".loader"))
         hii.querySelector(".loader").style.display = "none"
-        hii.style.border = "none"
+        // hii.style.border = "none"
     })
     category.forEach(element => {
         // console.log(element)
