@@ -622,7 +622,7 @@ body::-webkit-scrollbar-thumb{
 }
 .price{
     background-color: rgb(85, 201, 255);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding-left: 3px;
     padding-right: 3px;
 }
