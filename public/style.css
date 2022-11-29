@@ -60,7 +60,7 @@ body::-webkit-scrollbar-thumb{
     /* padding-top: .65rem; */
     display: flex;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
     /* border: blue 1px solid; */
 }
 .navbar-list-container{
@@ -100,7 +100,7 @@ body::-webkit-scrollbar-thumb{
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: black;
+    background-color: rgb(49, 158, 209);
 }
 /* Header media queries */
 @media(max-width:768px){
