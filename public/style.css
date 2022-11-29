@@ -60,7 +60,7 @@ body::-webkit-scrollbar-thumb{
     /* padding-top: .65rem; */
     display: flex;
     align-items: center;
-    font-size: .9rem;
+    font-size: 1rem;
     /* border: blue 1px solid; */
 }
 .navbar-list-container{
@@ -95,9 +95,9 @@ body::-webkit-scrollbar-thumb{
 }
 .mobile-nav-bar{
     display: block;
-    width: 16px;
-    height: 2px;
-    margin: 3px auto;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: black;
