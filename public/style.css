@@ -169,6 +169,7 @@ body::-webkit-scrollbar-thumb{
     position: relative;
     margin-top: 5vh;
     width: 95%;
+    margin-bottom: 1rem;
     /* background: url(./img/image_17.jpg); */
     background: url(./img/back2.jpg);
     background-size: 100% 100%;
@@ -602,18 +603,39 @@ body::-webkit-scrollbar-thumb{
     background-color: white;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: 6fr 4fr; */
+    /* grid-template-rows: 240px; */
     gap: .8rem;
     min-height: 50vh;
 }
 .grid-item{
     /* border-radius: 10px; */
     /* border: #0D0D0D solid .5px; */
-    aspect-ratio: 4/3;
+    /* aspect-ratio: 4/3; */
     /* box-shadow: 0px 5px 20px black; */
+    height: 100px;
     position: relative;
     border: 1px solid rgba(82, 163, 255);
     border-radius: 20px;
 
+}
+.grid-item:nth-child(4){
+    grid-row: span 2 / auto;
+    height: 200px;
+    border: green 10px solid;
+    background-color: #001a5a;
+}
+.grid-item:nth-child(2){
+    grid-row: span 2 / auto;
+    height: 200px;
+    border: green 10px solid;
+    background-color: #001a5a;
+}
+.grid-item:nth-child(5){
+    grid-row: span 2 / auto;
+    height: 200px;
+    border: green 10px solid;
+    background-color: #001a5a;
 }
 @keyframes refresh{
     0% {
@@ -683,11 +705,11 @@ body::-webkit-scrollbar-thumb{
 }
 .grid-item img{
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 20px;
 }
 .text-container{
-    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.421));
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.421)); */
     position: absolute;
     bottom: 0;
     left: 0;
