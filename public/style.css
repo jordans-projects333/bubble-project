@@ -251,25 +251,25 @@ body::-webkit-scrollbar-thumb{
     left: 50%;
     width: 80%;
     height: 80%;
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg) ;
     animation: intro 1s;
     -webkit-animation: intro 1s;
     position: absolute;
 }
 @keyframes spin{
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) ;
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg) ;
     }
 }
 @-webkit-keyframes spin{
     0% {
-        transform: translate(-50%, -50%) rotate(0deg); 
+        transform: translate(-50%, -50%) rotate(0deg) ; 
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg); 
+        transform: translate(-50%, -50%) rotate(360deg) ; 
     }
 }
 @-webkit-keyframes spin{
