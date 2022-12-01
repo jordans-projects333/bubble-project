@@ -243,6 +243,7 @@ body::-webkit-scrollbar-thumb{
     left: 50%;
     transform: translate(-50%, -50%) rotate(0deg);
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: center;
     animation: spin 90s linear infinite;
     -webkit-animation: spin 90s linear infinite;
     position: absolute;
@@ -263,20 +264,24 @@ body::-webkit-scrollbar-thumb{
     0% {
         transform:  rotate(0deg) translate(-50%, -50%); 
         -webkit-transform: rotate(0deg) translate(-50%, -50%);
+        transform-origin: center;
     }
     100% {
         transform:  rotate(360deg) translate(-50%, -50%); 
         -webkit-transform: rotate(360deg) translate(-50%, -50%);
+        transform-origin: center;
     }
 }
 @-webkit-keyframes spin{
     0% {
         transform:  rotate(0deg) translate(-50%, -50%); 
         -webkit-transform: rotate(0deg) translate(-50%, -50%);
+        transform-origin: center;
     }
     100% {
         transform:  rotate(360deg) translate(-50%, -50%); 
         -webkit-transform: rotate(360deg) translate(-50%, -50%);
+        transform-origin: center;
     }
 }
 @-webkit-keyframes spin{
