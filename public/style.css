@@ -241,7 +241,8 @@ body::-webkit-scrollbar-thumb{
     height: 90%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(0deg);
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
     animation: spin 90s linear infinite;
     -webkit-animation: spin 90s linear infinite;
     position: absolute;
@@ -253,24 +254,29 @@ body::-webkit-scrollbar-thumb{
     width: 80%;
     height: 80%;
     transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
     animation: intro 1s;
     -webkit-animation: intro 1s;
     position: absolute;
 }
 @keyframes spin{
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) ;
+        transform: translate(-50%, -50%) rotate(0deg);
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) ;
+        transform: translate(-50%, -50%) rotate(360deg);
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 @-webkit-keyframes spin{
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) ; 
+        transform: translate(-50%, -50%) rotate(0deg); 
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) ; 
+        transform: translate(-50%, -50%) rotate(360deg); 
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 @-webkit-keyframes spin{
