@@ -673,62 +673,50 @@ body::-webkit-scrollbar-thumb{
 }
 .grid-item:nth-child(6){
     grid-column: span 5 / auto;
-    grid-row: span 4;
-    aspect-ratio: 5/4;
+    grid-row: span 5;
+    aspect-ratio: 5/5;
     
 }
 .grid-item:nth-child(7){
     grid-column: span 5 / auto;
-    grid-row: span 6;
-    aspect-ratio: 5/6;
+    grid-row: span 5;
+    aspect-ratio: 5/5;
     
 }
 .grid-item:nth-child(8){
     grid-column: span 5 / auto;
-    grid-row: span 6;
-    aspect-ratio: 5/6;
+    grid-row: span 4;
+    aspect-ratio: 5/4;
     
 }
 .grid-item:nth-child(9){
     grid-column: span 5 / auto;
-    grid-row: span 4;
-    aspect-ratio: 5/4;
+    grid-row: span 6;
+    aspect-ratio: 5/6;
     
 }
 .grid-item:nth-child(10){
     grid-column: span 5 / auto;
-    grid-row: span 4;
-    aspect-ratio: 5/4;
+    grid-row: span 6;
+    aspect-ratio: 5/6;
     
 }
 .grid-item:nth-child(11){
     grid-column: span 5 / auto;
-    grid-row: span 6;
-    aspect-ratio: 5/6;
+    grid-row: span 4;
+    aspect-ratio: 5/4;
     
 }
 .grid-item:nth-child(12){
     grid-column: span 5 / auto;
-    grid-row: span 6;
-    aspect-ratio: 5/6;
+    grid-row: span 5;
+    aspect-ratio: 5/5;
     
 }
 .grid-item:nth-child(13){
     grid-column: span 5 / auto;
-    grid-row: span 4;
-    aspect-ratio: 5/4;
-    
-}
-.grid-item:nth-child(14){
-    grid-column: span 5 / auto;
-    grid-row: span 4;
-    aspect-ratio: 5/4;
-    
-}
-.grid-item:nth-child(15){
-    grid-column: span 5 / auto;
-    grid-row: span 6;
-    aspect-ratio: 5/6;
+    grid-row: span 5;
+    aspect-ratio: 5/5;
     
 }
 .grid-item:nth-child(16){
