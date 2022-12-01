@@ -647,33 +647,36 @@ body::-webkit-scrollbar-thumb{
     grid-row: span 2 / auto;
     height: 240px;
 } */
-.grid-item:nth-child(2n+1){
+.grid-item:nth-child(2n){
     grid-column: span 5 / auto;
     grid-row: span 5;
     aspect-ratio: 5/5;
-    
+}
+.grid-item:nth-child(2n+1){
+    grid-column: span 5 / auto;
+    grid-row: span 6;
+    aspect-ratio: 5/6;
 }
 .grid-item:nth-child(2n+2){
     grid-column: span 5 / auto;
     grid-row: span 6;
     aspect-ratio: 5/6;
-    
+}
+.grid-item:nth-child(2n+3){
+    grid-column: span 5 / auto;
+    grid-row: span 5;
+    aspect-ratio: 5/5;
 }
 /* /* .grid-item:nth-child(4){
     grid-column: span 5 / auto;
     grid-row: span 6;
     aspect-ratio: 5/6;
-    
 } */
 .grid-item:last-child{
     grid-column: span 5 / auto;
     grid-row: span 6;
     aspect-ratio: 5/6;
-    
 }
-
-
-
 @keyframes refresh{
     0% {
         scale: 1;
