@@ -241,6 +241,7 @@ body::-webkit-scrollbar-thumb{
     height: 90%;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     animation: spin 90s linear infinite;
     -webkit-animation: spin 90s linear infinite;
     position: absolute;
@@ -251,7 +252,7 @@ body::-webkit-scrollbar-thumb{
     left: 50%;
     width: 80%;
     height: 80%;
-    transform: translate(-50%, -50%) rotate(0deg) ;
+    transform: translate(-50%, -50%);
     animation: intro 1s;
     -webkit-animation: intro 1s;
     position: absolute;
