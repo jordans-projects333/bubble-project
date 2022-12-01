@@ -48,9 +48,7 @@ async function loadDataIntoItem(dataName, dataPrice, category, dataDescription){
     // })
     document.querySelector(".grid-container").appendChild(the_content)
     let hii = document.querySelector(".grid-container").children[document.querySelector(".grid-container").childElementCount - 1]
-    console.log(hii)
     hii.querySelector("img").addEventListener("load", () =>{
-        console.log(the_content.querySelector(".loader"))
         hii.querySelector(".loader").style.display = "none"
         // hii.style.border = "none"
     })
@@ -59,7 +57,6 @@ async function loadDataIntoItem(dataName, dataPrice, category, dataDescription){
         hii.classList.add(`${element}`)
     })
     if(dataSettings.filter != "priority"){
-        console.log("goose")
         if(!hii.classList.contains(`${dataSettings.filter}`)){
             hii.classList.add("filter-hide")
         }
@@ -98,7 +95,7 @@ async function dataCollection(filter, filterNumber, filterMax){
                 loadDataIntoItem(response.name, response.price, response.category, response.description)
             }else{
                 window.addEventListener("load", () => {
-                    loadDataIntoItem(response.name, response.price,response.image, response.category, response.description)
+                    loadDataIntoItem(response.name, response.price, response.category, response.description)
                 })
             }
         })
@@ -129,9 +126,8 @@ fetch("/totals")
         dataSettings.maximums.rocks = data.rocks
         dataSettings.maximums.bar = data.bar
     })
-    .then(async () => {
-        await gettingAlltheProducts()
-        console.log(dataSettings.storedElements)
+    .then(() => {
+        gettingAlltheProducts()
     })
     .catch(err => {
         console.log(err)

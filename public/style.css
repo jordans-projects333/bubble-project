@@ -615,7 +615,7 @@ body::-webkit-scrollbar-thumb{
     /* grid-template-columns: 6fr 4fr 4fr 6fr; */
     /* grid-template-rows: 10px; */
     gap: .8rem;
-    /* min-height: 50vh; */
+    min-height: 50vh;
 }
 .grid-item{
     /* border-radius: 10px; */
@@ -837,7 +837,59 @@ body::-webkit-scrollbar-thumb{
     align-items: center;
 }
 /* === Footer === */
+/* === Footer === */
 .main-footer{
+    background-color: #111;
+    height: auto;
+    width: 100%;
+    font-family: 'Open Sans';
+    /* padding-top: 40px; */
+    color: white;
+}
+/* .footer-primary-content{
+    display: flex;
+    height: 30px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+} */
+.footer-primary-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    /* line-height: 3rem; */
+}
+.socials{
+    height: 20px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 1rem 0 1rem 0; */
+}
+.socials li{
+    margin: 0 10px;
+    font-size: 1.4rem;
+}
+.socials a{
+    text-decoration: none;
+    color: white;
+    transition: .5s ease-out;
+}
+.socials a:hover{
+    color: aquamarine;
+}
+.footer-secondary-content{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-secondary-content span{
+    color: rgb(255, 255, 255);
+}
+/* .main-footer{
     background-color: rgb(49, 158, 209);
     width: 100%;
     display: flex;
@@ -853,7 +905,7 @@ body::-webkit-scrollbar-thumb{
 }
 .footer-col h4{
     font-size: 1.3rem;
-    color: white;
+    color: black;
     font-weight: 100;
     margin-bottom: 10px;
 }
@@ -862,7 +914,7 @@ body::-webkit-scrollbar-thumb{
 }
 .footer-col-content a{
     text-decoration: none;
-    color: #c2c2c2;
+    color: black;
     letter-spacing: 2px;
 }
 .footer-col-content-socials{
@@ -872,7 +924,7 @@ body::-webkit-scrollbar-thumb{
 .footer-col-content-socials a{
     font-size: 1.3rem;
     margin-right: 30px;
-    color: #c2c2c2;
+    color: black;
 }
 @media(max-width:768px){
     .footer-inner-container{
@@ -892,7 +944,7 @@ body::-webkit-scrollbar-thumb{
     .footer-col-content-socials a{
         margin: 20px;
     }
-}
+} */
 .addToCartPopUp{
     background-color: #001a5a;
     border-radius: 10%;
