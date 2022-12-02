@@ -635,6 +635,10 @@ body::-webkit-scrollbar-thumb{
     animation: item-intro forwards .6s;
     -webkit-animation: item-intro forwards .6s;
 }
+/* .filter-animation{
+    animation: item-intro forwards .6s;
+    -webkit-animation: item-intro forwards .6s;
+} */
 @keyframes item-intro {
     0%{
         opacity: 0;

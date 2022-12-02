@@ -36,7 +36,12 @@ sliderPosition(0)
 // Creating the product grid from data
 function filterClick(e){
     // document.querySelector(".product-number").classList.remove("temp-spin")
-    document.querySelectorAll(".grid-item").forEach((element)=> element.classList.remove("filter-hide"))
+    document.querySelectorAll(".grid-item").forEach((element)=> {
+        element.classList.remove("filter-hide")
+        if(!element.classList.contains("filter-hide")){
+            element.classList.add("filter-hide")
+        }
+    })
     let slider = document.querySelector(".filter-slider")
     let total = (document.querySelector(".grid-container").childElementCount) -1
     document.querySelectorAll(".filter-item").forEach((item) => {
@@ -52,6 +57,10 @@ function filterClick(e){
         case "All products":
             dataSettings.filter = "priority"
             sliderPosition(0)
+            document.querySelectorAll(".grid-item").forEach((element)=> {
+                // console.log(element)
+                element.classList.remove("filter-hide")
+            })
             // document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.total})</span>`
             break;
         case "Sets":
@@ -59,9 +68,9 @@ function filterClick(e){
             sliderPosition(1)
             document.querySelectorAll(".grid-item").forEach((element)=> {
                 // console.log(element)
-                if(!element.classList.contains("set")){
+                if(element.classList.contains("set")){
                     console.log("fired")
-                    element.classList.add("filter-hide")
+                    element.classList.remove("filter-hide")
                 }
             })
             // document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.set})</span>`
@@ -70,8 +79,8 @@ function filterClick(e){
             dataSettings.filter = "bomb"
             sliderPosition(2)
             document.querySelectorAll(".grid-item").forEach((element)=> {
-                if(!element.classList.contains("bomb")){
-                    element.classList.add("filter-hide")
+                if(element.classList.contains("bomb")){
+                    element.classList.remove("filter-hide")
                 }
             })
             // document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bomb})</span>`
@@ -81,8 +90,8 @@ function filterClick(e){
             sliderPosition(3)
             
             document.querySelectorAll(".grid-item").forEach((element)=> {
-                if(!element.classList.contains("rocks")){
-                    element.classList.add("filter-hide")
+                if(element.classList.contains("rocks")){
+                    element.classList.remove("filter-hide")
                 }
             })
             // document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.rocks})</span>`
@@ -91,8 +100,8 @@ function filterClick(e){
             dataSettings.filter = "bar"
             sliderPosition(4)
             document.querySelectorAll(".grid-item").forEach((element)=> {
-                if(!element.classList.contains("bar")){
-                    element.classList.add("filter-hide")
+                if(element.classList.contains("bar")){
+                    element.classList.remove("filter-hide")
                 }
             })
             // document.querySelector(".products-title").innerHTML = `Products<span class="product-number">(${dataSettings.maximums.bar})</span>`
