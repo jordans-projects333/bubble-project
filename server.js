@@ -8,7 +8,7 @@ const ejs = require('ejs');
 const path = require('path')
 const server = express()
 server.use(express.static(path.join(__dirname, 'public')))
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 20
 const cors = require("cors")
 server.use(cors())
 
