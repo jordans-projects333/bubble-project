@@ -219,8 +219,8 @@ body::-webkit-scrollbar-thumb{
     display: block;
 }
 .bubble-container{
-    animation: fade 3s forwards 2s;
-    -webkit-animation: fade 3s forwards 2s;
+    animation: fade 3s forwards 7s;
+    -webkit-animation: fade 3s forwards 7s;
 }
 @keyframes fade{
     0% {
@@ -299,7 +299,7 @@ body::-webkit-scrollbar-thumb{
     border: 1px solid white;
     border-radius: 50%;
     aspect-ratio: 1/1;
-    /* scale: 0; */
+    scale: 0;
 }
 #bubble1{
     width: 8%;
