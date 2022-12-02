@@ -632,8 +632,8 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    animation: item-intro forwards .3s;
-    -webkit-animation: item-intro forwards .3s;
+    animation: item-intro forwards .6s;
+    -webkit-animation: item-intro forwards .6s;
 }
 @keyframes item-intro {
     0%{
