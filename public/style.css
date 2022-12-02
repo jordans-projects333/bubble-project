@@ -632,8 +632,17 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
+    animation: item-intro forwards .3s;
+    -webkit-animation: item-intro forwards .3s;
 }
+@keyframes item-intro {
+    0%{
+        scale: 0;
+    }
+    100%{
+        scale: 1;
+    }
+}y
 .price{
     /* background-color: rgb(85, 201, 255); */
     /* border-radius: 10px; */

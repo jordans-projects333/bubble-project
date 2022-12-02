@@ -33,7 +33,7 @@ async function loadDataIntoItem(dataName, dataPrice, category, dataDescription){
     let str = dataName
     str = str.replace(/\s/g, '-')
     the_content.querySelector("img").src = `/product/${str}`
-    the_content.querySelector("img").loading = "lazy"
+    // the_content.querySelector("img").loading = "lazy"
     // add the other attributes
     the_content.querySelector("div").setAttribute('data-description', dataDescription)
     the_content.querySelector("div").classList.remove("unloaded")
