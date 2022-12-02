@@ -58,7 +58,9 @@ function filterClick(e){
             dataSettings.filter = "set"
             sliderPosition(1)
             document.querySelectorAll(".grid-item").forEach((element)=> {
+                // console.log(element)
                 if(!element.classList.contains("set")){
+                    console.log("fired")
                     element.classList.add("filter-hide")
                 }
             })
